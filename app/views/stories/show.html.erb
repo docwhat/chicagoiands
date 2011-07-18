@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<section id="story">
+	<header>
+		<%= @story.title %>
+		<span class="author">
+			by <%= @story.author %>
+		</span>
+	</header>
+
+	<div id="body">
+  		<%= raw @story.body %>
+	</div>
+
+
+	<%= link_to 'Edit', edit_story_path(@story) %> |
+	<%= link_to 'Back', stories_path %>
+
+</section>
