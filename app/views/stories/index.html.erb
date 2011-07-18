@@ -5,16 +5,12 @@
 	<%= link_to story.title, story %>
 	by <%= story.author %>
 	
-	<footer>
-		<p>
-			posted on <%= story.created_at %>
-		</p>
-	</footer>
 	<!-- 
     <td><%= link_to 'Edit', edit_story_path(story) %></td>
     <td><%= link_to 'Destroy', story, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 -->
+</article>
 <% end %>
 
 <%= link_to 'New Story', new_story_path %>
