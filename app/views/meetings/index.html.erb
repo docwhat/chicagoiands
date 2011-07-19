@@ -1,0 +1,12 @@
+<h1>Listing meetings</h1>
+
+<% @meetings.each do |meeting| %>
+<article>
+  <header>
+    <%= meeting.date %>: <%= link_to (meeting.title ? meeting.title :  'undetermined'), meeting %>
+  </header>
+  <p><%= meeting.topic %></p>
+</article>
+<% end %>
+
+<%= link_to 'New Meeting', new_meeting_path %>

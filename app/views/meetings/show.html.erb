@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<section class="meeting">
+  <header><%= @meeting.date %>: <%= @meeting.title %></header>
+
+  <p>
+   <%= @meeting.topic %>
+ </p>
+ <div class="body">
+   <%= raw @meeting.body %>
+ </div>
+
+</section>
+
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>
