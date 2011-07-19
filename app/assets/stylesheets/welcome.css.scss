@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.welcome {
-  // Add the welcome class to your body tag
-  // Then, place scoped styles here.
+  .next-meeting {
+    .topic {
+      font-style: italic;
+    }
+    .body {
+      max-width: 30em;
+      border: 1px solid #eee;
+      margin: auto;
+    }
+  }
 }

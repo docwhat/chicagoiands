@@ -1,7 +1,7 @@
-<h1>Listing meetings</h1>
+<h1><%= @season %> Meetings</h1>
 
 <% @meetings.each do |meeting| %>
-<article>
+<article class="<%= meeting.next? ? 'next' : '' %>">
   <header>
     <%= meeting.date %>: <%= link_to (meeting.title ? meeting.title :  'undetermined'), meeting %>
   </header>

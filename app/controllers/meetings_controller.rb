@@ -1,8 +1,10 @@
+require 'season'
 class MeetingsController < ApplicationController
   # GET /meetings
   # GET /meetings.json
   def index
-    @meetings = Meeting.order('"date" desc').all
+    @season = Season.new params[:season]
+    @meetings = Meeting.in_season(@season)
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Chicagoiands</title>
+  <title>ChicagoIANDS</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= params[:controller] %> <%= "#{params[:controller]}_#{params[:action]}" %>">
 
 <%= yield %>
 
