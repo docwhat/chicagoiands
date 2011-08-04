@@ -8,7 +8,18 @@
 </head>
 <body class="<%= params[:controller] %> <%= "#{params[:controller]}_#{params[:action]}" %>">
 
-<header id="header">Chicago IANDS</header>
+<header id="header"><%= link_to "Chicago IANDS", :root %></header>
+
+<% if current_user %>
+  <section id="login-bar">
+    Logged in as <%= current_user.logon %>
+    <%= link_to "Log out", logout_path %>
+  </section>
+<% end %>
+
+<% flash.each do |name, msg| %>  
+    <%= content_tag :div, msg, :id => "flash#{name}" %>  
+<% end %>
 
 <div id="content">
 <%= yield %>

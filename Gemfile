@@ -15,14 +15,15 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
 gem 'nokogiri'
+gem 'pry'
 
 group :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "capybara"
   gem "guard-rspec"
+  gem 'contest'
   # Pretty printed test output
   gem 'turn', :require => false
 end
