@@ -48,6 +48,7 @@ namespace :zope do
 
       doc.xpath("//story").each do |story_xml|
         story = Story.new
+        puts " * story: #{story_xml.xpath("./title").text}"
         story.title = story_xml.xpath("./title").text
         story.author = story_xml.xpath("./author").text
         story.body = story_xml.xpath("./body").text.gsub(/<dtml[^>]+>/, '')
@@ -80,6 +81,7 @@ namespace :zope do
 
       doc.xpath("//event").each do |meeting_xml|
         meeting = Meeting.new
+        puts " * meeting: #{meeting_xml.xpath("./date").text} -- #{meeting_xml.xpath("./title").text}"
         meeting.title = meeting_xml.xpath("./title").text
         meeting.topic = meeting_xml.xpath("./topic").text
         meeting.body = meeting_xml.xpath("./body").text
