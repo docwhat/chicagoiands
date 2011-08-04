@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  topic: MyString
-  body: MyText
-  date: 2011-07-18
+  title: The Past
+  topic: Presented by Fry
+  body: My life as a pizza delivery boy
+  date: 1999-12-31
 
 two:
-  title: MyString
-  topic: MyString
-  body: MyText
-  date: 2011-07-18
+  title: The Future
+  topic: Presented by Fry
+  body: My life as a package delivery boy
+  date: 5000-01-02
