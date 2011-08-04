@@ -6,4 +6,10 @@ class WelcomeControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should get a no new meetings message" do
+    meetings(:future).delete
+    get :index
+    assert_response :success
+  end
+
 end

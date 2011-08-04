@@ -1,18 +1,7 @@
 <h1>Welcome to Chicago IANDS and iSee</h1>
 
-<section class="next-meeting">
-   <header>
-    <%= @next_meeting.date %>:<%= @next_meeting.title %> (in <%= time_ago_in_words(@next_meeting.date) %>)
-     <div class="topic">
-       Topic: <%= @next_meeting.topic %>
-     </div>
-   </header>
 
-   <div class="body">
-     <%= raw @next_meeting.body %>
-   </div>
-</section>
-
+<%= render @meeting_layout %>
 
 <ul>
   <li><%= link_to "meetings", meetings_path %></li>

@@ -1,12 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
-one:
+past:
   title: The Past
   topic: Presented by Fry
   body: My life as a pizza delivery boy
   date: 1999-12-31
 
-two:
+future:
   title: The Future
   topic: Presented by Fry
   body: My life as a package delivery boy
