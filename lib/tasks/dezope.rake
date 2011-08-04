@@ -34,14 +34,14 @@ require 'nokogiri'
 namespace :zope do
 
 
-  desc "Import tmp/stories.xml"
+  desc "Import old-site/stories.xml"
   task :stories => [:environment] do
     top=Pathname.new(__FILE__).dirname.dirname.dirname
 
     begin
 
       doc = nil
-      (top + "tmp" + "stories.xml").open('r') do |fp|
+      (top + "old-site" + "stories.xml").open('r') do |fp|
         data = fp.read
         doc = Nokogiri::XML(data)
       end
@@ -62,17 +62,18 @@ namespace :zope do
       raise
     end
 
+    puts "imported old-site/stories.xml"
   end
 
 
-  desc "Import tmp/schedule.xml"
+  desc "Import old-site/schedule.xml"
   task :schedule => [:environment] do
     top=Pathname.new(__FILE__).dirname.dirname.dirname
 
     begin
 
       doc = nil
-      (top + "tmp" + "schedule.xml").open('r') do |fp|
+      (top + "old-site" + "schedule.xml").open('r') do |fp|
         data = fp.read
         doc = Nokogiri::XML(data)
       end
@@ -93,5 +94,8 @@ namespace :zope do
       raise
     end
 
+    puts "imported old-site/schedule.xml"
   end
 end
+
+task :zope => [:'zope:schedule', :'zope:stories']
