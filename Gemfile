@@ -16,7 +16,8 @@ end
 
 gem 'jquery-rails'
 gem 'nokogiri'
-gem 'pry'
+#gem 'pry' -- removed due to https://github.com/carlhuda/bundler/issues/1334
+
 
 group :test do
   gem "rspec-rails"
