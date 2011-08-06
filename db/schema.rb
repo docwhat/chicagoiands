@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20110806022238) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "rendered"
+    t.text     "rendered"
   end
 
   create_table "stories", :force => true do |t|
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20110806022238) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "rendered"
+    t.text     "rendered"
   end
 
   create_table "users", :force => true do |t|

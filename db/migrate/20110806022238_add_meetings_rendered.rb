@@ -1,6 +1,6 @@
 class AddMeetingsRendered < ActiveRecord::Migration
   def up
-    add_column :meetings, :rendered, :string
+    add_column :meetings, :rendered, :text
   end
 
   def down
