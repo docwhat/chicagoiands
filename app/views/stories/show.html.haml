@@ -8,7 +8,7 @@
       = @story.author
 
   %div{:id=>"body"}
-    = raw @story.body
+    = raw @story.rendered
 
 
   = link_to 'Edit', edit_story_path(@story)

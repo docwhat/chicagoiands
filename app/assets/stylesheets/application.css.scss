@@ -5,3 +5,11 @@
  *= require_self
  *= require_tree . 
 */
+
+#content {
+    margin: auto;
+    max-width: 40em;
+    p {
+	margin: 1em 0;
+    }
+}

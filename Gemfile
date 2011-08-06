@@ -15,6 +15,7 @@ group :assets do
 end
 
 gem 'haml'
+gem 'kramdown'
 gem 'jquery-rails'
 gem 'nokogiri'
 #gem 'pry' -- removed due to https://github.com/carlhuda/bundler/issues/1334

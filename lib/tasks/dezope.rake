@@ -2,6 +2,7 @@
 
 require 'pathname'
 require 'nokogiri'
+require 'kramdown'
 
 ### Fix "Smart Quotes"
 ## This is a blunt force method of
@@ -33,7 +34,6 @@ require 'nokogiri'
 
 namespace :zope do
 
-
   desc "Import old-site/stories.xml"
   task :stories => [:environment] do
     top=Pathname.new(__FILE__).dirname.dirname.dirname
@@ -47,11 +47,16 @@ namespace :zope do
       end
 
       doc.xpath("//story").each do |story_xml|
-        story = Story.new
-        puts " * story: #{story_xml.xpath("./title").text}"
-        story.title = story_xml.xpath("./title").text
+        title = story_xml.xpath("./title").text
+        story = Story.find_by_title title
+        story = Story.new unless story
+
+        puts " * story: #{title}"
+        story.title = title
         story.author = story_xml.xpath("./author").text
-        story.body = story_xml.xpath("./body").text.gsub(/<dtml[^>]+>/, '')
+        raw_html = story_xml.xpath("./body").text.gsub(/<dtml[^>]+>/, '')
+        raw_html.gsub(/<h6>/i, '<h2>').gsub(/<\/h6>/i, '</h2>')
+        story.body = Kramdown::Document.new(raw_html, :input => 'html').to_kramdown
         story.updated_at = story_xml.xpath("./updated").text
         story.save!
       end
