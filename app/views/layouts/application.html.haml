@@ -10,7 +10,11 @@
 
   %body{:class => "#{params[:controller]} #{params[:controller]}_#{params[:action]}"}
 
-    %header{:id => "header"}= link_to("Chicago IANDS", :root)
+    %header{:id => "header"}
+      %div{:class => "header"}
+        = link_to("Chicago IANDS", :root)
+      %div{:class => "subheader"}
+        The International Association of Near-Death Studies, Inc.
     -if current_user
       %section{:id => "login-bar"}
         Logged in as
@@ -24,8 +28,9 @@
       = yield
 
     %footer{:id => "footer"}
-      Copyright
-      = "2000-#{Date.today.year}"
-      Chicago IANDS, unless otherwise noted. You are encouraged to
-      share the information at this web site with other people, as
-      long as you do not charge for it.
+      %p
+        Copyright
+        = "2000-#{Date.today.year}"
+        Chicago IANDS, unless otherwise noted. You are encouraged to
+        share the information at this web site with other people, as
+        long as you do not charge for it.

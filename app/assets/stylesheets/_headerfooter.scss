@@ -1,18 +1,44 @@
+
 #header, #footer {
-  background-color: #def;
+   background-color: #def;
+   background-image: inline-image('../images/clouds.png');
 }
 
 #header {
-  font-size: 3.0em;
-  font-weight: bold;
-  line-height: 2em;
-  text-align: center;
+   font-family: $header_font;
+   text-align: center;
+   @include single-text-shadow(#555, 0.1ex, 0.1ex, 0.2ex);
+   color: black;
+   margin-bottom: 2em;
+   a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+	 color: #555;
+	 background-color: transparent;
+      }
+   }
+   .header {
+      font-size: 4.0em;
+      font-weight: bold;
+   }
+   .subheader {
+      font-size: 0.8;
+   }
 }
 
 #footer {
-  font-size: 0.9em;
-  font-style: italic;
-  text-align: center;
-  line-height: 1.2em;
-  margin-top: 2em;
+   color: #888;
+   font-size: 0.9em;
+   font-style: italic;
+   text-align: center;
+   line-height: 1.2em;
+   margin-top: 2em;
+   padding: 0.5em 1em;
+   p {
+      @include single-text-shadow(#555, 0.1ex, 0.1ex, 0.2ex);
+      color: white;
+      max-width: 30em;
+      margin: 1em auto;
+   }
 }
