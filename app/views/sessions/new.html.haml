@@ -1,0 +1,12 @@
+%section{ :id => "login" }
+  %header Authenticate yourself
+
+  = form_tag sessions_path do
+    %div{ :class => "field" }
+      = label_tag :logon
+      = text_field_tag :logon, params[:logon]
+    %div{ :class => "field" }
+      = label_tag :password
+      = password_field_tag :password
+    %div{ :class => "actions" }
+      = submit_tag "Log in"

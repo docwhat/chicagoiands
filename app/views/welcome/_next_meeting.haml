@@ -1,0 +1,8 @@
+%section{ :class => "next-meeting" }
+  %header
+    = "#{@next_meeting.date}: #{@next_meeting.title} (in #{time_ago_in_words(@next_meeting.date)})"
+    %div{ :class => "topic" }
+      Topic:
+      = @next_meeting.topic
+    %div{ :class => "body" }
+      = raw @next_meeting.body

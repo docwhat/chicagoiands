@@ -1,0 +1,13 @@
+%p{ :id => "notice" }= notice
+
+%section{ :class => "meeting" }
+  %header= "#{@meeting.date}: #{@meeting.title}"
+
+  %p= @meeting.topic
+
+  %div{:class => "body"}
+    = raw @meeting.body
+
+= link_to 'Edit', edit_meeting_path(@meeting)
+|
+= link_to 'Back', meetings_path

@@ -1,0 +1,10 @@
+%h1= "#{@season} Meetings"
+
+- @meetings.each do |meeting|
+  %article{:class => (meeting.next? ? 'next' : '')}
+    %header
+    = "#{meeting.date}:"
+    = link_to((meeting.title ? meeting.title :  'undetermined'), meeting)
+    %p= meeting.topic
+
+= link_to('New Meeting', new_meeting_path)

@@ -14,6 +14,7 @@ group :assets do
   gem 'uglifier'
 end
 
+gem 'haml'
 gem 'jquery-rails'
 gem 'nokogiri'
 #gem 'pry' -- removed due to https://github.com/carlhuda/bundler/issues/1334

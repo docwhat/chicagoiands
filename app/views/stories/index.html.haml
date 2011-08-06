@@ -1,0 +1,12 @@
+%h1 Near-Death Stories
+
+- @stories.each do |story|
+  %article
+    = link_to story.title, story
+    by
+    = story.author
+
+    %span= link_to 'Edit', edit_story_path(story)
+    %span= link_to 'Destroy', story, confirm: 'Are you sure?', method: :delete
+
+= link_to 'New Story', new_story_path
