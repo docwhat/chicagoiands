@@ -1,5 +1,7 @@
 require 'season'
 class Meeting < ActiveRecord::Base
+  before_save :update_rendered
+
   ##
   # The next meeting
   def self.next
@@ -21,6 +23,12 @@ class Meeting < ActiveRecord::Base
       where("meetings.date >= ? AND meetings.date < ?", season.start, season.stop)
       .order("meetings.date desc")
       .all
+  end
+
+  ##
+  # Updates the rendered field for the meeting.
+  def update_rendered
+    self.rendered = Kramdown::Document.new(self.body).to_html
   end
 
 end

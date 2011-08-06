@@ -55,7 +55,6 @@ namespace :zope do
         story.title = title
         story.author = story_xml.xpath("./author").text
         raw_html = story_xml.xpath("./body").text.gsub(/<dtml[^>]+>/, '')
-        raw_html.gsub(/<h6>/i, '<h2>').gsub(/<\/h6>/i, '</h2>')
         story.body = Kramdown::Document.new(raw_html, :input => 'html').to_kramdown
         story.updated_at = story_xml.xpath("./updated").text
         story.save!
@@ -85,12 +84,20 @@ namespace :zope do
       end
 
       doc.xpath("//event").each do |meeting_xml|
-        meeting = Meeting.new
-        puts " * meeting: #{meeting_xml.xpath("./date").text} -- #{meeting_xml.xpath("./title").text}"
-        meeting.title = meeting_xml.xpath("./title").text
+        title = meeting_xml.xpath("./title").text
+        date = meeting_xml.xpath("./date").text
+        meeting = Meeting.find_by_date date
+        meeting = Meeting.new unless meeting
+
+        puts " * meeting: #{date} -- #{title}"
+
+        meeting.title = title
         meeting.topic = meeting_xml.xpath("./topic").text
-        meeting.body = meeting_xml.xpath("./body").text
-        meeting.date = meeting_xml.xpath("./date").text
+
+        raw_html = meeting_xml.xpath("./body").text
+        meeting.body = Kramdown::Document.new(raw_html, :input => 'html').to_kramdown
+
+        meeting.date = date
         meeting.save!
       end
 

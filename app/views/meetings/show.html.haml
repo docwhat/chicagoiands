@@ -6,7 +6,7 @@
   %p= @meeting.topic
 
   %div{:class => "body"}
-    = raw @meeting.body
+    = raw @meeting.rendered
 
 = link_to 'Edit', edit_meeting_path(@meeting)
 |
