@@ -1,16 +1,12 @@
 %p{:id=>"notice"}= notice
 
-%section{:id=>"story"}
-  %header
-    = @story.title
-    %span{:class => "author"}
-      by
-      = @story.author
+%article
+  = render :partial=>"header", :locals => {:story => @story}
 
   %div{:id=>"body"}
     = raw @story.rendered
 
 
-  = link_to 'Edit', edit_story_path(@story)
-  |
-  = link_to 'Back', stories_path
+= link_to 'Edit', edit_story_path(@story)
+|
+= link_to 'Back', stories_path

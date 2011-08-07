@@ -3,6 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.stories {
-  // Add the stories class to your body tag
-  // Then, place scoped styles here.
+
+   article {
+      header {
+	 a {
+	    display: block;
+	    text-decoration: none;
+	    font-size: 1.4em;
+	    font-weight: bold;
+	 }
+	 .author {
+	    float: right;
+	    font-style: italic;
+	    font-size: 0.9em;
+	 }
+	 @include clearfix();
+	 margin-bottom: 1.6em;
+      }
+   }
 }
