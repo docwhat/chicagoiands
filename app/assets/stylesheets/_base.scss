@@ -1,6 +1,15 @@
 
-@import "compass/css3/text-shadow";
+$nav-color: #bdf;
+$content-bg: #fff;
+$font-color: #333;
+
 @import "compass/css3";
+@import "compass/css3/text-shadow";
+@import "compass/css3/border-radius";
+@import "compass/utilities/color/contrast";
+@import "compass/utilities/general/clearfix";
+$contrasted-dark-default: $font-color;
+$contrasted-light-default: white;
 
 /* @include font-face("Fontdiner Swanky", font-files("http://fonts.googleapis.com/css?family=Fontdiner+Swanky")); */
 @import url("http://fonts.googleapis.com/css?family=Fontdiner+Swanky&ignore");
@@ -17,8 +26,8 @@ $header_font: "Fontdiner Swanky", cursive;
 @import "welcome";
 
 body {
-   background-color: #fff;
-   color: #333;
+   background-color: $content-bg;
+   color: $font-color;
    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 /*
    font-family: verdana, arial, helvetica, sans-serif;
@@ -54,4 +63,22 @@ body {
    p {
       margin: 1em 0;
    }
+}
+
+$fancy-date-radius: 0.7em;
+div.fancy-date {
+   width: 3.5em;
+   text-align: center;
+   color: $font-color;
+   .month-day {
+      font-size: 0.83em;
+      padding: 0.6em 0 0.5em;
+      @include contrasted($nav-color);
+      @include border-radius($fancy-date-radius $fancy-date-radius 0 0);
+   }
+   .year {
+      padding: 0.3em 0 0.4em;
+      @include contrasted(darken(desaturate($nav-color, 50%), 8%));
+      @include border-radius(0 0 $fancy-date-radius $fancy-date-radius);
+    }
 }

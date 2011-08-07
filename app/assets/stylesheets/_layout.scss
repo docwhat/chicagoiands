@@ -1,5 +1,41 @@
 
 #content {
-    margin: 1.8em auto;
-    max-width: 40em;
+   margin: 0 auto 1.8em;
+   border: 1px solid $nav-color;
+   padding: 1.8em;
+   max-width: 40em;
+   h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+   }
+}
+
+nav {
+   text-align: center;
+   ul {
+      margin: 0;
+      padding: 1px 0 0 0;
+   }
+   li {
+      display: inline;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      a {
+	 color: $font-color;
+	 margin: 0 0.2em;
+	 padding: 0em 1em;
+	 border: 1px solid darken($nav-color, 5%);
+	 border-bottom: none;
+	 background: $nav-color;
+	 text-decoration: none;
+	 &.selected {
+	    background: $content-bg;
+	    border-bottom: 1px solid $content-bg;
+	 }
+	 &:hover {
+	    background: lighten($nav-color, 8%);
+	 }
+      }
+   }
 }

@@ -4,6 +4,7 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     @season = Season.new params[:season]
+    @seasons = Season.seasons
     @meetings = Meeting.in_season(@season)
 
     respond_to do |format|

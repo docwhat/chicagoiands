@@ -1,10 +1,15 @@
-%h1= "#{@season} Meetings"
-
+%h1{:id=>"season"}
+  = "#{@season} Meetings"
+%div{:class=>"choose"}
+  %form{:method=>'get', :action=>meetings_path}
+    Goto different season:
+    =select_tag "season", options_from_collection_for_select(@seasons, 'year', 'to_s', @season.year.to_s)
+    %input{:type=>"submit", :value=>"go"}
 - @meetings.each do |meeting|
   %article{:class => (meeting.next? ? 'next' : '')}
+    = render :partial => "layouts/date", :locals => { :date => meeting.date }
     %header
-    = "#{meeting.date}:"
-    = link_to((meeting.title ? meeting.title :  'undetermined'), meeting)
+      = link_to((meeting.title ? meeting.title :  'undetermined'), meeting)
     %p= meeting.topic
 
 = link_to('New Meeting', new_meeting_path)

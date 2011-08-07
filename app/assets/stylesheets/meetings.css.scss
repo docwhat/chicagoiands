@@ -3,9 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.meetings {
-  // Add the meetings class to your body tag
-  // Then, place scoped styles here.
-  article.next {
-    background: #def;
-  }
+
+   // Selection for seasons.
+   .choose {
+      margin: 1em 0;
+   }
+
+   article {
+      @include clearfix();
+      .fancy-date {
+	 float: left;
+	 margin: 0 1em 1em 0;
+      }
+      p {
+	 padding-left: 6em;
+      }
+      header {
+	 a {
+	    display: block;
+	    text-decoration: none;
+	    font-size: 1.4em;
+	    font-weight: bold;
+	 }
+      }
+      &.next {
+	 background: #def;
+      }
+   }
+
 }

@@ -1,0 +1,6 @@
+%div{:class=>"fancy-date"}
+  %div{:class=>"month-day"}
+    = Date::ABBR_MONTHNAMES[date.month]
+    = date.day
+  %div{:class=>"year"}
+    = date.year
