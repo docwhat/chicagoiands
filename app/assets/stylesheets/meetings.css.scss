@@ -8,27 +8,26 @@ body.meetings {
    .choose {
       margin: 1em 0;
    }
+}
 
-   article {
-      @include clearfix();
-      .fancy-date {
-	 float: left;
-	 margin: 0 1em 1em 0;
-      }
-      p {
-	 padding-left: 6em;
-      }
-      header {
-	 a {
-	    display: block;
-	    text-decoration: none;
-	    font-size: 1.4em;
-	    font-weight: bold;
-	 }
-      }
-      &.next {
-	 background: #def;
+article.meeting {
+   @include clearfix();
+   .fancy-date {
+      float: left;
+      margin: 0 1em 1em 0;
+   }
+   p {
+      padding-left: 5em;
+   }
+   header {
+      a {
+	 display: block;
+	 text-decoration: none;
+	 font-size: 1.4em;
+	 font-weight: bold;
       }
    }
-
+   &.even {
+      background: #def;
+   }
 }

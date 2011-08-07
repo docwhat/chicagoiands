@@ -1,0 +1,4 @@
+= render :partial => "layouts/date", :locals => { :date => meeting.date }
+%header
+  = link_to((meeting.title ? meeting.title :  'undetermined'), meeting)
+%p= meeting.topic
