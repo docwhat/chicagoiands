@@ -1,6 +1,6 @@
 # ChicagoIANDS
 
-This is the website code for ChicagoIANDS.org
+This is the website code for [ChicagoIANDS.org](http://chicagoiands.org/)
 
 # Copyright/License
 
