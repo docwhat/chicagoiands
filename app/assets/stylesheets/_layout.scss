@@ -8,13 +8,15 @@
       font-size: 3em;
       margin-bottom: 0.3em;
    }
+   @include border-radius(0.5em);
 }
 
 nav {
    text-align: center;
+   font-size: 1.2em;
    ul {
-      margin: 0;
-      padding: 1px 0 0 0;
+      margin: 1em 0 -1px 0;
+      padding: 0;
    }
    li {
       display: inline;
@@ -22,6 +24,7 @@ nav {
       margin: 0;
       padding: 0;
       a {
+	 @include border-radius(0.3em 0.3em 0 0);
 	 color: $font-color;
 	 margin: 0 0.2em;
 	 padding: 0em 1em;
