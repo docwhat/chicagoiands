@@ -4,6 +4,9 @@ require 'rendered_model'
 class Meeting < ActiveRecord::Base
   include RenderedModel
 
+  validates :date,  :presence => true, :uniqueness => true
+  validates :title, :presence => true, :length => {:minimum => 2}
+
   ##
   # The next meeting
   def self.next

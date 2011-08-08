@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
-
-one:
-  logon: alice
-  password_digest: MyString
-
-two:
-  logon: bob
-  password_digest: MyString

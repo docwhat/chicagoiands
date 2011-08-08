@@ -21,7 +21,7 @@ module RenderedModel
     ##
     # Updates the rendered field for the meeting.
     def render_body
-      self.rendered = Kramdown::Document.new(self.body).to_html
+      self.rendered = Kramdown::Document.new(self.body).to_html unless self.body.nil?
     end
   end
 end

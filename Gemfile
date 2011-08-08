@@ -23,11 +23,17 @@ gem 'simple-navigation'
 #gem 'pry' -- removed due to https://github.com/carlhuda/bundler/issues/1334
 
 
+gem "rspec-rails", :group => [:test, :development]
+gem 'rb-fsevent', :group => [:test, :development]
+gem 'growl', :group => [:test, :development]
 group :test do
-  gem "rspec-rails"
   gem "factory_girl_rails"
   gem "capybara"
+  gem "launchy"
   gem "guard-rspec"
+  gem 'mocha'
+
+  # To Nuke
   gem 'contest'
   # Pretty printed test output
   gem 'turn', :require => false

@@ -5,8 +5,6 @@
 jQuery ->
     select = $('#season')
     select.change (event) ->
-        console.log("NARF %o", select.val())
         select.parent('form').submit()
-        console.log("NARF %o", select.val())
         true
     $('.choose input[type=submit]').hide()
