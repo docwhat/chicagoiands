@@ -14,3 +14,4 @@
 ## Sunday Aug 7th
 
 * 1 hours
+* 6 hours
