@@ -32,9 +32,10 @@ group :test do
   gem "launchy"
   gem "guard-rspec"
   gem 'mocha'
+  gem 'spork'
 
-  # To Nuke
-  gem 'contest'
-  # Pretty printed test output
-  gem 'turn', :require => false
+#  # To Nuke
+#  gem 'contest'
+#  # Pretty printed test output
+#  gem 'turn', :require => false
 end
