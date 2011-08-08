@@ -24,6 +24,7 @@ gem 'simple-navigation'
 
 
 gem "rspec-rails", :group => [:test, :development]
+gem 'rspec-instafail', :group => [:test, :development]
 gem 'rb-fsevent', :group => [:test, :development]
 gem 'growl', :group => [:test, :development]
 group :test do
@@ -33,6 +34,8 @@ group :test do
   gem "guard-rspec"
   gem 'mocha'
   gem 'spork'
+  gem "guard-bundler"
+  #gem 'webkit-rspec-formatter'
 
 #  # To Nuke
 #  gem 'contest'

@@ -3,6 +3,12 @@
 
 require 'active_support/inflector'
 
+guard 'bundler' do
+  watch('Gemfile')
+  # Uncomment next line if Gemfile contain `gemspec' command
+  # watch(/^.+\.gemspec/)
+end
+
 guard 'spork', :cucumber => false, :test_unit => false, :rspec_env => { 'RAILS_ENV' => 'test' }, :wait => 30 do
   watch('config/application.rb')
   watch('config/environment.rb')
@@ -11,7 +17,7 @@ guard 'spork', :cucumber => false, :test_unit => false, :rspec_env => { 'RAILS_E
   watch('spec/spec_helper.rb')
 end
 
-guard 'rspec', :version => 2 do
+guard 'rspec', :version => 2, :cli => "--color --require rspec/instafail --format RSpec::Instafail --drb" do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
