@@ -1,10 +1,12 @@
 #!/bin/bash
 
-set -eux
+set -eu
 
 cd "$(dirname "$0")"
 
-curl -n https://zope.gerf.org/chicagoiands/stories/export_xml >| stories.xml
-curl -n https://zope.gerf.org/chicagoiands/schedule/export_xml >| schedule.xml
+for i in stories schedule; do
+    echo "Updating ${i}..."
+    curl -s -n https://zope.gerf.org/chicagoiands/${i}/export_xml | xml fo -C | perl -p -e 's/\s+$/\n/g' >| ${i}.xml
+done
 
 # EOF
