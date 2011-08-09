@@ -15,3 +15,7 @@
 
 * 1 hours
 * 6 hours
+
+## Monday Aug 8th
+
+* 4 hours
