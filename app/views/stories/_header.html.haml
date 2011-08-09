@@ -1,4 +1,9 @@
 %header
+  - if current_user
+    %span{:class => 'admin'}
+      = link_to "edit", edit_story_path(story)
+      = link_to "destroy", story, confirm: 'Are you sure?', method: :delete
+
   = link_to story.title, story
   %span{:class=>'author'}
     by

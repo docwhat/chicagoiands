@@ -16,6 +16,7 @@ body.stories {
 	    float: right;
 	    font-style: italic;
 	    font-size: 0.9em;
+	    clear: both;
 	 }
 	 @include clearfix();
 	 margin-bottom: 1.6em;

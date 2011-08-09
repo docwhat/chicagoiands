@@ -8,6 +8,13 @@ body.meetings {
    .choose {
       margin: 1em 0;
    }
+
+   form {
+      #meeting_date {
+	 font-family: monospace;
+	 width: 7em;
+      }
+   }
 }
 
 article.meeting {

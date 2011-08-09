@@ -1,12 +1,17 @@
+- if current_user
+  %span{:class => 'admin'}= link_to "new meeting", new_meeting_path
+
 %h1
   = "#{@season} Meetings"
+
+
 %div{:class=>"choose"}
   %form{:method=>'get', :action=>meetings_path}
     Goto different season:
     =select_tag "season", options_from_collection_for_select(@seasons, 'year', 'to_s', @season.year.to_s)
     %input{:type=>"submit", :value=>"go"}
+
+
 - @meetings.each do |meeting|
   %article{:class => "#{meeting.next? ? 'next ' : ''}#{cycle('odd','even')} meeting"}
     = render :partial => "header", :locals => {:meeting => meeting}
-
-= link_to('New Meeting', new_meeting_path)

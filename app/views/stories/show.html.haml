@@ -1,12 +1,5 @@
-%p{:id=>"notice"}= notice
-
 %article
   = render :partial=>"header", :locals => {:story => @story}
 
   %div{:id=>"body"}
     = raw @story.rendered
-
-
-= link_to 'Edit', edit_story_path(@story)
-|
-= link_to 'Back', stories_path

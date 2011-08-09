@@ -3,6 +3,7 @@ $nav-color: #bdf;
 $alt-nav-color: #fdb;
 $content-bg: #fff;
 $font-color: #333;
+$admin-color: #b88;
 
 @import "compass/css3";
 @import "compass/css3/text-shadow";
@@ -18,6 +19,7 @@ $header_font: "Fontdiner Swanky", cursive;
 
 @import "html5reset";
 @import "date";
+@import "jquery-ui";
 
 @import "scaffolds";
 @import "layout";
@@ -26,6 +28,7 @@ $header_font: "Fontdiner Swanky", cursive;
 @import "meetings";
 @import "stories";
 @import "welcome";
+@import "sessions";
 
 body {
    background-color: $content-bg;

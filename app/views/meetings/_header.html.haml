@@ -1,4 +1,8 @@
 = render :partial => "layouts/date", :locals => { :date => meeting.date }
 %header
+  - if current_user
+    %span{:class => 'admin'}
+      = link_to "edit", edit_meeting_path(meeting)
+      = link_to "destroy", meeting, confirm: 'Are you sure?', method: :delete
   = link_to((meeting.title ? meeting.title :  'undetermined'), meeting)
 %p= meeting.topic

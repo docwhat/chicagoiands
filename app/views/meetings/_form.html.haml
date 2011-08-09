@@ -16,7 +16,7 @@
   %div{ :class => 'field' }
     = f.label :topic
     %br/
-    = f.text_field :topic
+    = f.text_area :topic, :rows => 3
   %div{ :class => "field" }
     = f.label :body
     %br/
@@ -24,6 +24,7 @@
   %div{ :class => "field" }
     = f.label :date
     %br/
-    = f.date_select :date
+    = f.text_field :date, :size => 10, :maxlength => 10
   %div{ :class => "actions" }
     = f.submit
+    = link_to "Cancel", meetings_path

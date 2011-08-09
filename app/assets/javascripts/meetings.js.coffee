@@ -8,3 +8,5 @@ jQuery ->
         select.parent('form').submit()
         true
     $('.choose input[type=submit]').hide()
+
+    $('#meeting_date').datepicker({ dateFormat: 'yy-mm-dd', autosize: true });

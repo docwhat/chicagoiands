@@ -1,5 +1,3 @@
-%p{ :id => "notice" }= notice
-
 %article{:class => "#{@meeting.next? ? 'next ' : ''}#{cycle('odd','even')} meeting"}
   = render :partial => "header", :locals => {:meeting => @meeting}
 
@@ -7,7 +5,3 @@
 
   %div{:class => "body"}
     = raw @meeting.rendered
-
-= link_to 'Edit', edit_meeting_path(@meeting)
-|
-= link_to 'Back', meetings_path
