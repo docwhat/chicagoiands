@@ -9,3 +9,4 @@
 Texture.create(label: "welcome", body: "# Welcome to ChicagoIANDS\n")
 Texture.create(label: "about",   body: "# About us\n")
 Texture.create(label: "contact", body: "# Contact us\n")
+Texture.create(label: "links",   body: "# Links\n")

@@ -9,7 +9,7 @@ Chicagoiands::Application.routes.draw do
 
   controller :textures do
     #get "about" => "textures#show", :as => about
-    get "/:label", :to => :show, :constraints => { :label => /(contact|about)/ }
+    get "/:label", :to => :show, :constraints => { :label => /(contact|about|links)/ }
   end
 
   # The priority is based upon order of creation:
