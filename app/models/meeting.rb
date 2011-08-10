@@ -26,7 +26,7 @@ class Meeting < ActiveRecord::Base
   def self.in_season season
     Meeting.
       where("meetings.date >= ? AND meetings.date < ?", season.start, season.stop)
-      .order("meetings.date desc")
+      .order("meetings.date ASC")
       .all
   end
 
