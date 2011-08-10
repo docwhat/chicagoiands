@@ -19,3 +19,7 @@
 ## Monday Aug 8th
 
 * 4 hours
+
+## Tuesday Aug 9th
+
+ * 2 hours
