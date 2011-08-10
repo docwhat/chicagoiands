@@ -37,7 +37,12 @@ class TexturesController < ApplicationController
 
     respond_to do |format|
       if @texture.update_attributes(params[:texture])
-        format.html { redirect_to @texture, notice: 'Texture was successfully updated.' }
+        if @texture.label == 'welcome'
+          redir_path = root_path
+        else
+          redir_path = @texture
+        end
+        format.html { redirect_to redir_path, notice: 'The text was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
