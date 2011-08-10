@@ -27,7 +27,6 @@ gem 'rspec-instafail', :group => [:test, :development]
 gem 'rb-fsevent', :group => [:test, :development]
 gem 'growl', :group => [:test, :development]
 gem 'pry', :group => [:test, :development]
-gem 'pry-doc', :group => [:test, :development]
 group :test do
   gem "factory_girl_rails"
   gem "capybara"
