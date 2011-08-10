@@ -22,4 +22,5 @@
 
 ## Tuesday Aug 9th
 
- * 2 hours
+* 2 hours
+* 4 hours
