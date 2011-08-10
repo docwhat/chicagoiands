@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe StoriesController do
 #  fixtures :all
-  render_views
+#  render_views
 
   context "as guest" do
     let(:story) { Factory.create(:story) }

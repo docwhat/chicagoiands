@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
     else
       @meeting_layout = "no_meetings"
     end
+    @texture = Texture.find_by_label('welcome')
   end
 
 end

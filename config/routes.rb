@@ -1,10 +1,16 @@
 Chicagoiands::Application.routes.draw do
-  get "login" => "sessions#new", :as => "login"
-  get "logout" => "sessions#destroy", :as => "logout"
   resources :meetings
   resources :stories
   resources :sessions
+  resources :textures
 
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+
+  controller :textures do
+    #get "about" => "textures#show", :as => about
+    get "/:label", :to => :show, :constraints => { :label => /(contact|about)/ }
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -3,14 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.welcome {
-  .next-meeting {
-    .topic {
-      font-style: italic;
-    }
-    .body {
-      max-width: 30em;
-      border: 1px solid #eee;
-      margin: auto;
-    }
-  }
+   .next-meeting {
+      .topic {
+	 font-style: italic;
+      }
+      .body {
+	 max-width: 35em;
+	 margin: 0 auto 1em;
+      }
+      #read-more, #read-less {
+	 margin-top: -0.5em;
+	 text-align: right;
+	 a {
+	    text-decoration: none;
+	    font-size: 1em;
+	    font-weight: normal;
+	 }
+      }
+   }
 }

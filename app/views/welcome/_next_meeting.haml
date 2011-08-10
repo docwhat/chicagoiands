@@ -1,9 +1,10 @@
-%article{ :class => "next-meeting next meeting" }
+%article{ :id => "next-meeting", :class => "next-meeting next meeting" }
   %header
     = render :partial => "meetings/header", :locals => {:meeting => @next_meeting}
-    -# = "#{@next_meeting.date}: #{@next_meeting.title} (in #{time_ago_in_words(@next_meeting.date)})"
-    -# %div{ :class => "topic" }
-    -#   Topic:
-    -#   = @next_meeting.topic
-    %div{ :class => "body" }
-      = raw @next_meeting.rendered
+    %p{:id => 'read-more'}
+      = link_to "more about this meeting&hellip;".html_safe, meeting_path(@next_meeting)
+
+  %div{ :class => "body", :style=>"display: none" }
+    = raw @next_meeting.rendered
+    %p{:id => 'read-less'}
+      = link_to "hide this&hellip;".html_safe, root_path

@@ -68,8 +68,10 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.auto_highlight = false
 
     primary.item :home, 'Home', root_path
+    primary.item :about, 'About', root_path + 'about'
     primary.item :meetings, 'Meetings', meetings_path, :highlights_on => /^\/meetings/
     primary.item :stories, 'Stories', stories_path, :highlights_on => /^\/stories/
+    primary.item :about, 'Contact', root_path + 'contact'
 
 #    primary.item :logout, 'Logout', session_path, :method => "destroy", :if => Proc.new { current_user }
   end

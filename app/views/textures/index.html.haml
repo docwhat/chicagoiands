@@ -1,0 +1,5 @@
+%h1 Listing textures
+
+%ul
+  - @textures.each do |texture|
+    %li= link_to texture.label, texture
