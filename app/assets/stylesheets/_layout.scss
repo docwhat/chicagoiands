@@ -1,9 +1,9 @@
 
 #content {
    margin: 0 auto 1.8em;
-   border: 1px solid $nav-color;
+   border: 1px solid $content-border;
    padding: 1.8em;
-   max-width: 40em;
+   width: 40em;
    h1 {
       font-size: 3em;
       margin-bottom: 0.3em;
@@ -106,7 +106,7 @@ nav {
 	 color: $font-color;
 	 margin: 0 0.2em;
 	 padding: 0em 1em;
-	 border: 1px solid darken($nav-color, 5%);
+	 border: 1px solid darken($content-border, 5%);
 	 border-bottom: none;
 	 background: $nav-color;
 	 text-decoration: none;

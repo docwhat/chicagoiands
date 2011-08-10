@@ -1,42 +1,68 @@
-
 #header, #footer {
-   background-color: #def;
-   background-image: inline-image('../images/clouds.png');
+   margin: 0 auto 1.8em;
+   //border: 1px solid $nav-color;
+   padding: 0.3em 1.8em;
+   width: 40em;
+   background-color: transparentize($content-bg, 0.8);
 }
-
 #header {
-   font-family: $header_font;
-   text-align: center;
-   @include single-text-shadow(#555, 0.1ex, 0.1ex, 0.2ex);
-   color: black;
+   height: 8em;
+   position: relative;
+   @include border-radius(0 0 0.8em 0.8em);
+
+   #logo {
+      //float: left;
+      height: 90%;
+      position: absolute;
+      top: 0;
+      left: 1em;
+      z-index: -1;
+   }
+
    a {
-      color: black;
       text-decoration: none;
-      &:hover {
-	 color: #555;
-	 background-color: transparent;
+      &:link,&:visited {
+	 color: black;
+      }
+      &:hover, &:active {
+	 color: #444;
       }
    }
+
+   .header, .subheader {
+      white-space: nowrap;
+      font-family: $header-font;
+   }
+
    .header {
-      font-size: 4.0em;
-      font-weight: bold;
+      @include text-shadow(0.1ex 0.1ex 0.1ex #888);
+      margin-left: 1em;
+      font-size: 3.5em;
+      .chicago {
+	 font-style: italic;
+      }
+      .iands {
+	 padding-top: 1em;
+	 font-weight: bold;
+      }
    }
    .subheader {
+      color: black;
+      text-align: center;
       font-size: 0.8;
    }
 }
 
 #footer {
-   color: #888;
-   font-size: 0.9em;
-   font-style: italic;
+   color: lighten($font-color, 10%);
    text-align: center;
-   line-height: 1.2em;
-   padding: 0.5em 1em;
+   margin-bottom: 0;
+   @include border-radius(0.8em 0.8em 0 0);
    p {
-      @include single-text-shadow(#555, 0.1ex, 0.1ex, 0.2ex);
-      color: white;
+      line-height: 1.2em;
+      font-style: italic;
+      font-size: 0.9em;
       max-width: 30em;
-      margin: 1em auto;
+      margin: 1em auto 0;
    }
 }

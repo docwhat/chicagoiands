@@ -15,14 +15,10 @@
         = current_user.logon
         = link_to "X", logout_path
 
+    = render :partial => "layouts/header"
 
-    %header{:id => "header"}
-      %div{:class => "header"}
-        = link_to("Chicago IANDS", :root)
-      %div{:class => "subheader"}
-        The International Association of Near-Death Studies, Inc.
     %nav{:id => "main-navigation"}
-      =render_navigation
+      = render_navigation
 
     %div{:id => "content"}
       - flash.each do |name, msg|

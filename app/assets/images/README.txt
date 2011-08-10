@@ -11,3 +11,9 @@
 
  * URL: http://jqueryui.com/
  * License: dual licensed under GPL v2 & MIT
+
+## 409_tile_sky.jpg
+
+ * URL:   http://zooboingreview.blogspot.com/2009/12/seamless-texture-blue-sky.html
+ * Author: Zooboing
+ * License: [Attribution 3.0 Unported](http://creativecommons.org/licenses/by/3.0/)

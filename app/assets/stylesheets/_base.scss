@@ -1,6 +1,7 @@
 
 $nav-color: #bdf;
 $alt-nav-color: #fdb;
+$content-border: desaturate(darken($nav-color, 15%), 5%);
 $content-bg: #fff;
 $font-color: #333;
 $admin-color: #b88;
@@ -14,8 +15,9 @@ $contrasted-dark-default: $font-color;
 $contrasted-light-default: white;
 
 /* @include font-face("Fontdiner Swanky", font-files("http://fonts.googleapis.com/css?family=Fontdiner+Swanky")); */
-@import url("http://fonts.googleapis.com/css?family=Fontdiner+Swanky&ignore");
-$header_font: "Fontdiner Swanky", cursive;
+// @import url("http://fonts.googleapis.com/css?family=Fontdiner+Swanky&ignore");
+@import url(http://fonts.googleapis.com/css?family=Tienne:700);
+$header-font: "Tienne", sans-serif;
 
 @import "html5reset";
 @import "date";
@@ -31,7 +33,8 @@ $header_font: "Fontdiner Swanky", cursive;
 @import "sessions";
 
 body {
-   background-color: $content-bg;
+   background-image: inline-image('../images/409_tile_sky.jpg');
+   @include background-size(100%);
    color: $font-color;
    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 /*
@@ -42,6 +45,7 @@ body {
 }
 
 #content {
+   background-color: $content-bg;
    pre {
       background-color: #eee;
       padding: 10px;
