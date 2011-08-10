@@ -33,7 +33,7 @@ $header-font: "Tienne", sans-serif;
 @import "sessions";
 
 body {
-   background-image: inline-image('../images/409_tile_sky.jpg');
+   background-image: inline-image('409_tile_sky.jpg');
    @include background-size(100%);
    color: $font-color;
    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
