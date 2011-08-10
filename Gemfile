@@ -33,7 +33,7 @@ group :test do
   gem "launchy"
   gem "guard-rspec"
   gem 'mocha'
-  gem 'spork'
+  gem 'guard-spork'
   gem "guard-bundler"
   #gem 'webkit-rspec-formatter'
 
