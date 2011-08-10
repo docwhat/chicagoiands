@@ -17,7 +17,7 @@ class Season
   ##
   # The start of a season as a Date.
   def self.start_of_season year
-    return Date.new year, 9, 15
+    return Date.new year, 8, 15
   end
 
   ##

@@ -17,4 +17,11 @@ describe Season do
     season.start.year.should == year
     season.stop.year.should == year + 1
   end
+
+  it "should start on the 15th of August" do
+    year = 1999
+    season = Season.new year
+    season.start.should == Date.new(year, 8, 15)
+    season.stop.should == Date.new(year + 1, 8, 15)
+  end
 end
