@@ -20,7 +20,8 @@ $contrasted-light-default: white;
 @import url(http://fonts.googleapis.com/css?family=Lora:700);
 $header-font: "Lora", sans-serif;
 
-@import "html5reset";
+// @import "html5reset";
+@import "compass/reset";
 @import "date";
 @import "jquery-ui";
 
@@ -32,6 +33,8 @@ $header-font: "Lora", sans-serif;
 @import "stories";
 @import "welcome";
 @import "sessions";
+
+@include global-reset();
 
 body {
    background-image: inline-image('409_tile_sky.jpg');

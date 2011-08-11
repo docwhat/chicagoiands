@@ -23,6 +23,30 @@
       }
    }
 
+   // Lists
+   ul,ol {
+      margin: 0 1.5em 1.5em 0;
+      padding-left: 1.5em;
+   }
+   li ul, li ol {
+      margin: 0;
+   }
+   ol {
+      list-style-type: decimal;
+   }
+   ul {
+      list-style-type: disc;
+   }
+   dl {
+      margin: 0 0 1.5em 0;
+   }
+   dl dt {
+      font-weight: bold;
+   }
+   dd {
+      margin-left: 1.5em;
+   }
+
    // Flash Notices
    #flashnotice {
       background-color: #A4E7A0;
