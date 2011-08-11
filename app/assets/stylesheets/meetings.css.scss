@@ -17,24 +17,33 @@ body.meetings {
    }
 }
 
-article.meeting {
-   @include clearfix();
-   .fancy-date {
-      float: left;
-      margin: 0 1em 1em 0;
-   }
-   p {
-      padding-left: 5em;
-   }
-   header {
-      a {
-	 display: block;
-	 text-decoration: none;
-	 font-size: 1.4em;
-	 font-weight: bold;
+#content {
+   article.meeting {
+      @include clearfix();
+      .fancy-date {
+	 float: left;
+	 margin: 0 1em 1em 0;
       }
-   }
-   &.even {
-      background: #def;
+      p {
+	 padding-left: 5em;
+      }
+      header {
+	 a {
+	    font-family: $header-font;
+	    display: block;
+	    text-decoration: none;
+	    font-size: 1.4em;
+	    font-weight: bold;
+	    &:link,&:visited {
+	       color: $font-color;
+	    }
+	    &:hover,&:active {
+	       color: lighten($font-color, 10%);
+	    }
+	 }
+      }
+      &.even {
+	 background: #def;
+      }
    }
 }

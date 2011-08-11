@@ -4,13 +4,20 @@
 
 body.stories {
 
-   article {
+#content article {
       header {
 	 a {
+	    font-family: $header-font;
 	    display: block;
 	    text-decoration: none;
 	    font-size: 1.4em;
 	    font-weight: bold;
+	    &:link,&:visited {
+	       color: $font-color;
+	    }
+	    &:hover,&:active {
+	       color: lighten($font-color, 10%);
+	    }
 	 }
 	 .author {
 	    float: right;

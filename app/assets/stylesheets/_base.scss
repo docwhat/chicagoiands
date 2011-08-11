@@ -3,8 +3,9 @@ $nav-color: #bdf;
 $alt-nav-color: #fdb;
 $content-border: desaturate(darken($nav-color, 15%), 5%);
 $content-bg: #fff;
-$font-color: #333;
+$font-color: #444;
 $admin-color: #b88;
+$link-color: #66a;
 
 @import "compass/css3";
 @import "compass/css3/text-shadow";
@@ -14,9 +15,6 @@ $admin-color: #b88;
 $contrasted-dark-default: $font-color;
 $contrasted-light-default: white;
 
-/* @include font-face("Fontdiner Swanky", font-files("http://fonts.googleapis.com/css?family=Fontdiner+Swanky")); */
-// @import url("http://fonts.googleapis.com/css?family=Fontdiner+Swanky&ignore");
-// @import url(http://fonts.googleapis.com/css?family=Tienne:700);
 @import url(http://fonts.googleapis.com/css?family=Lora:700);
 $header-font: "Lora", sans-serif;
 
@@ -59,11 +57,10 @@ body {
    }
 
    a {
-      color: #000;
-      &:visited {
-	 color: #666; }
-      &:hover {
-	 color: #88a;
+      &:link,&:visited {
+	 color: $link-color; }
+      &:hover,&:active {
+	 color: lighten($link-color, 10%);
       }
    }
 
