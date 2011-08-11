@@ -5,6 +5,6 @@
       = link_to "more about this meeting&hellip;".html_safe, meeting_path(@next_meeting)
 
   %div{ :class => "body", :style=>"display: none" }
-    = raw @next_meeting.rendered
+    ~ raw @next_meeting.rendered
     %p{:id => 'read-less'}
       = link_to "hide this&hellip;".html_safe, root_path

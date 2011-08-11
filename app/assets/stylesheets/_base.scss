@@ -6,6 +6,7 @@ $content-bg: #fff;
 $font-color: #444;
 $admin-color: #b88;
 $link-color: #66a;
+$pre-font: Menlo, "Bitstream Vera Sans Mono", Monaco, "Lucida Console", monospace;
 
 @import "compass/css3";
 @import "compass/css3/text-shadow";
@@ -54,6 +55,10 @@ body {
 /*
       font-size: 11px;
 */
+   }
+
+   code, pre, textarea, input[type=text] {
+      font-family: $pre-font;
    }
 
    a {
