@@ -1,4 +1,4 @@
-%h1 Editing texture
+%h1= "Editing: #{@texture.label.capitalize}"
 
 = form_for(@texture) do |f|
   - if @texture.errors.any?
@@ -12,8 +12,6 @@
           %li= msg
 
   %div{:class=>"field"}
-    = f.label :body
-    %br
     = f.text_area :body
   %div{:class=>"actions"}
     = f.submit
