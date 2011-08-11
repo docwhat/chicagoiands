@@ -31,12 +31,12 @@ require 'kramdown'
 #  s.force_encoding "UTF-8"
 #end
 
-
 namespace :zope do
 
   desc "Import old-site/stories.xml"
   task :stories => [:environment] do
     top=Pathname.new(__FILE__).dirname.dirname.dirname
+    used = Set.new
 
     begin
 
@@ -54,10 +54,27 @@ namespace :zope do
         puts " * story: #{title}"
         story.title = title
         story.author = story_xml.xpath("./author").text
-        raw_html = story_xml.xpath("./body").text.gsub(/<dtml[^>]+>/, '')
-        story.body = Kramdown::Document.new(raw_html, :input => 'html').to_kramdown
+
+        body = Nokogiri::XML("<rootnode>#{story_xml.xpath("./body").text}</rootnode>")
+        allowed = ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'tt', 'pre', 'cite', 'em', 'strong', 'i', 'a', 'b', 'br']
+        body.xpath('/rootnode//*').each do |el|
+          el.name = el.name.downcase
+          unless allowed.include? el.name
+            used.add(el.name)
+            el.children.each { |x| x.parent = el.parent }
+            el.unlink
+          end
+        end
+        body_str = body.xpath('/rootnode/*').to_s
+        story.body = Kramdown::Document.new(body_str, :input => 'html').
+          to_kramdown.
+          gsub(/\\\"/, '"').
+          gsub(/\\\'/, "'").
+          gsub(/\\\#/, "#")
+
         story.updated_at = story_xml.xpath("./updated").text
         story.save!
+
       end
 
     rescue Exception => e
