@@ -16,8 +16,9 @@ $contrasted-light-default: white;
 
 /* @include font-face("Fontdiner Swanky", font-files("http://fonts.googleapis.com/css?family=Fontdiner+Swanky")); */
 // @import url("http://fonts.googleapis.com/css?family=Fontdiner+Swanky&ignore");
-@import url(http://fonts.googleapis.com/css?family=Tienne:700);
-$header-font: "Tienne", sans-serif;
+// @import url(http://fonts.googleapis.com/css?family=Tienne:700);
+@import url(http://fonts.googleapis.com/css?family=Lora:700);
+$header-font: "Lora", sans-serif;
 
 @import "html5reset";
 @import "date";
