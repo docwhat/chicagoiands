@@ -28,3 +28,7 @@
 ## Wednesday Aug 10th
 
 * 3 hours
+
+## Thursday Aug 11th
+
+* 5 hours
