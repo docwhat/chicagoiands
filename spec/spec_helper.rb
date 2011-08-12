@@ -11,9 +11,6 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'capybara/rspec'
-  require File.dirname(__FILE__) + "/factories"
-  require File.dirname(__FILE__) + "/model_macros"
-  require File.dirname(__FILE__) + "/controller_macros"
   require 'kramdown'
   require 'nokogiri'
   require 'pathname'

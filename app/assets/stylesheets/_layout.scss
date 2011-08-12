@@ -27,6 +27,7 @@
    #{headers()} {
       font-family: $header-font;
       margin-bottom: 0.6em;
+      margin: 0.6em 0;
    }
    h1 { font-size: 1.8em; }
    h2 { font-size: 1.6em; }
@@ -35,7 +36,7 @@
 
    // Lists
    ul,ol {
-      margin: 0 1.5em 1.5em 0;
+      margin: 0 1.5em 0 0; // 1.5em 0;
       padding-left: 1.5em;
    }
    li ul, li ol {
@@ -117,7 +118,36 @@
 	 }
       }
    }
+
+   blockquote {
+      font-family: $header-font;
+      font-style: italic;
+      color: lighten($font-color, 8%);
+      padding: 0 1.5em;
+      background: #eee;
+      border: 1px solid #ddd;
+      max-width: 70%;
+   }
+
 }
+
+#texture-help {
+   clear: both;
+   font-size: 0.8em;
+   margin-left: auto;
+   margin-right: auto;
+   width: 90%;
+   pre {
+      padding: 0.4em 1em;
+      background: #ddd;
+   }
+   div.example {
+      background: #def;
+      padding: 0.4em 1em;
+      border: 1px solid #ddd;
+   }
+}
+
 
 nav {
    text-align: center;
