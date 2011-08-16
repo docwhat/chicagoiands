@@ -6,6 +6,7 @@
     %title ChicagoIANDS
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
+    %link{:rel => "icon", :type => "image/png", :href => image_path("favicon-32.png")}
     = csrf_meta_tags
 
   %body{:class => "#{params[:controller]} #{params[:controller]}_#{params[:action]}"}
