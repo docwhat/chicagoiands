@@ -104,13 +104,14 @@ namespace :zope do
         title = meeting_xml.xpath("./title").text
         date = meeting_xml.xpath("./date").text
         topic = meeting_xml.xpath("./subtitle").text
+
         meeting = Meeting.find_by_date date
         meeting = Meeting.new unless meeting
 
         puts " * meeting: #{date} -- #{title}"
 
         meeting.title = title
-        meeting.topic = meeting_xml.xpath("./subtitle").text
+        meeting.topic = Nokogiri::HTML(topic).text
 
         raw_html = meeting_xml.xpath("./body").text
         meeting.body = Kramdown::Document.new(raw_html, :input => 'html').to_kramdown
