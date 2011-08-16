@@ -32,3 +32,7 @@
 ## Thursday Aug 11th
 
 * 5 hours
+
+## Monday Aug 15th
+
+* 3 hours
