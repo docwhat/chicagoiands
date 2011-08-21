@@ -6,7 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Texture.create(label: "welcome", body: "# Welcome to ChicagoIANDS\n")
-Texture.create(label: "about",   body: "# About us\n")
-Texture.create(label: "contact", body: "# Contact us\n")
-Texture.create(label: "links",   body: "# Links\n")
+["welcome", "about", "contact", "links"].each do |label|
+  Texture.create(label: label, body: "# #{label.capitalize}\n") unless Texture.find_by_label(label)
+end
