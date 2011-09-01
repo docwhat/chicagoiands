@@ -3,7 +3,7 @@
 
 = render :partial => "layouts/date", :locals => { :date => meeting.date }
 
-- if show_dvds and meeting.has_dvd
+- if show_dvds and meeting.has_dvd?
   %div(class="has-dvd")
     = link_to "Buy the DVD", dvds_path, :anchor => "meeting-#{meeting.date}", :title => "Buy the DVD and help support ChicagoIANDS!"
 
