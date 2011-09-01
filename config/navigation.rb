@@ -72,6 +72,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :meetings, 'Meetings', meetings_path, :highlights_on => /^\/meetings/
     primary.item :stories, 'Stories', stories_path, :highlights_on => /^\/stories/
     primary.item :about, 'Links', root_path + 'links'
+    primary.item :about, 'DVDs', dvds_path
     primary.item :about, 'Contact', root_path + 'contact'
 
 #    primary.item :logout, 'Logout', session_path, :method => "destroy", :if => Proc.new { current_user }

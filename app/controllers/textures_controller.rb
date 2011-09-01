@@ -40,7 +40,7 @@ class TexturesController < ApplicationController
         if @texture.label == 'welcome'
           redir_path = root_path
         else
-          redir_path = @texture
+          redir_path = root_path + @texture.label
         end
         format.html { redirect_to redir_path, notice: 'The text was successfully updated.' }
         format.json { head :ok }

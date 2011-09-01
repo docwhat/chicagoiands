@@ -1,0 +1,9 @@
+- if current_user
+  %span{:class => 'admin'}
+    = link_to "edit", edit_texture_path(@texture)
+
+~ raw @texture.rendered
+
+- @meetings.each do |meeting|
+  %article{:class => "#{meeting.next? ? 'next ' : ''}#{cycle('odd','even')} meeting"}
+    = render :partial => "header", :locals => {:meeting => meeting, :show_dvds => false, :show_admin => false}

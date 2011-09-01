@@ -17,12 +17,48 @@ body.meetings {
    }
 }
 
+body.meetings_dvds,
+body.meetings_index {
+   article.meeting {
+      min-height: 5em;
+   }
+}
+
 #content {
    article.meeting {
       @include clearfix();
       .fancy-date {
 	 float: left;
 	 margin: 0 1em 1em 0;
+      }
+      .has-dvd {
+	 float: right;
+	 clear: right;
+	 margin: 0 1em 1em 0;
+	 text-align: center;
+	 width: 3.5em;
+	 a {
+	    font-size: 72%;
+	    color: $buy-color;
+	    font-weight: bold;
+	    text-decoration: none;
+
+	    display: block;
+	    @include background-clip();
+	    @include border-radius(0.6em);
+	    padding: 0.2em 0.5em 0.5em;
+	    background: $buy-bg;
+	    @include background-image(linear-gradient(lighten($buy-bg, 40%), $buy-bg 60%, darken($buy-bg, 10%)));
+            @include box-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+	    &:link,&:visited {
+	       color: $buy-color;
+	    }
+	    &:hover,&:active {
+	       color: $buy-color;
+	       @include background-image(linear-gradient(lighten($buy-bg, 42%), lighten($buy-bg, 10%) 60%, $buy-bg));
+               @include box-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
+	    }
+	 }
       }
       p {
 	 padding-left: 5em;
@@ -41,6 +77,12 @@ body.meetings {
 	       color: lighten($font-color, 10%);
 	    }
 	 }
+      }
+      .topic {
+	 font-style: italic;
+	 color: lighten($font-color, 10%);
+	 margin: 0.5em 2em;
+	 text-alignment: justified;
       }
       &.even {
 	 background: #def;

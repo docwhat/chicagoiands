@@ -36,3 +36,11 @@
 ## Monday Aug 15th
 
 * 3 hours
+
+## Saturday Aug 27th
+
+* 4 hours
+
+## Wednesday Aug 31st
+
+* 1 hours

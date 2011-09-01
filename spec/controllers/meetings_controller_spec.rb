@@ -16,6 +16,11 @@ describe MeetingsController do
       response.should render_template(:show)
     end
 
+    it "dvd action should render dvd template" do
+      get :dvds, :url => "/dvds"
+      response.should render_template(:dvds)
+    end
+
     it_should_require_admin_for_actions :new, :create, :edit, :update, :destroy
   end
 

@@ -18,12 +18,23 @@ Spork.prefork do
   require 'json'
   require 'jquery-rails'
 
+end
+
+Spork.each_run do
+  require 'database_cleaner'
+  DatabaseCleaner.strategy = :truncation
+  DatabaseCleaner.clean
+
+  # This code will be run each time you run your specs.
+  ActiveSupport::Dependencies.clear
+
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
   # Load the seed data
   load "#{Rails.root}/db/seeds.rb"
+
 
   RSpec.configure do |config|
     # == Mock Framework
@@ -46,10 +57,6 @@ Spork.prefork do
     # instead of true.
     config.use_transactional_fixtures = true
   end
-end
-
-Spork.each_run do
-  # This code will be run each time you run your specs.
 
 end
 

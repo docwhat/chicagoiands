@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :require_login, :except => [:index, :show]
+  before_filter :require_login, :except => [:index, :show, :dvds]
 
   helper_method :current_user, :admin?
 

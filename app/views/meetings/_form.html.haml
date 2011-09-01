@@ -25,6 +25,10 @@
     = f.label :date
     %br/
     = f.text_field :date, :size => 10, :maxlength => 10
+  %div{ :class => "field" }
+    = f.label :has_dvd
+    %br/
+    = f.check_box :has_dvd
   %div{ :class => "actions" }
     = f.submit
     = link_to "Cancel", meetings_path

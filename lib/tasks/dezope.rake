@@ -3,6 +3,7 @@
 require 'pathname'
 require 'nokogiri'
 require 'kramdown'
+require 'date'
 
 ### Fix "Smart Quotes"
 ## This is a blunt force method of
@@ -129,6 +130,32 @@ namespace :zope do
 
     puts "imported old-site/schedule.xml"
   end
+
+  task :dvds => [:environment] do
+    top=Pathname.new(__FILE__).dirname.dirname.dirname
+    begin
+      doc = nil
+      (top + "old-site" + "dvds.list").open('r') do |fp|
+        fp.readlines.each do |line|
+          date = Date.parse line.chomp
+
+          meeting = Meeting.find_by_date(date)
+          if meeting
+            meeting.has_dvd = true
+            meeting.save!
+          end
+        end
+      end
+    rescue Exception => e
+      puts "**ERROR**"
+      puts e
+      puts "/ERROR"
+      raise
+    end
+
+    puts "dvd flags are set"
+  end
+
 end
 
-task :zope => [:'zope:schedule', :'zope:stories']
+task :zope => [:'zope:schedule', :'zope:stories', :'zope:dvds']

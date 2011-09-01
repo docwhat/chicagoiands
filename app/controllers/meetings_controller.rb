@@ -1,4 +1,5 @@
 require 'season'
+
 class MeetingsController < ApplicationController
   # GET /meetings
   # GET /meetings.json
@@ -20,6 +21,18 @@ class MeetingsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.json { render json: @meeting }
+    end
+  end
+
+  # GET /meetings/dvds
+  # GET /meetings/dvds.json
+  def dvds
+    @meetings = Meeting.where("has_dvd = ?", true).order("date ASC").all
+    @texture = Texture.find_by_label "dvds"
+
+    respond_to do |format|
+      format.html # dvds.html.erb
       format.json { render json: @meeting }
     end
   end

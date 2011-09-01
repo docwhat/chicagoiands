@@ -1,7 +1,7 @@
 # -*- ruby -*-
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '~> 3.1.0'
 
 # Database
 gem 'pg',      :group => [:production]
@@ -9,7 +9,7 @@ gem 'sqlite3', :group => [:test, :development]
 
 # Asset template engines
 group :assets do
-  gem 'sass-rails', "~> 3.1.0.rc"
+  gem 'sass-rails', "~> 3.1.0"
   gem 'coffee-script'
   gem 'uglifier'
   gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
@@ -28,13 +28,15 @@ gem 'rb-fsevent', :group => [:test, :development]
 gem 'growl', :group => [:test, :development]
 gem 'pry', :group => [:test, :development]
 group :test do
+  gem 'database_cleaner'
   gem "factory_girl_rails"
   gem "capybara"
   gem "launchy"
-  gem "guard-rspec"
   gem 'mocha'
   gem 'guard-spork'
   gem "guard-bundler"
+  gem "guard-rspec"
+  gem "guard-migrate"
   #gem 'webkit-rspec-formatter'
 
 #  # To Nuke

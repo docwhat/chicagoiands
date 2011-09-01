@@ -1,7 +1,5 @@
 %article{:class => "#{@meeting.next? ? 'next ' : ''}#{cycle('odd','even')} meeting"}
   = render :partial => "header", :locals => {:meeting => @meeting}
 
-  %p= @meeting.topic
-
   %div{:class => "body"}
     ~ raw @meeting.rendered

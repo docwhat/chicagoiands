@@ -1,0 +1,24 @@
+#content {
+   .admin {
+      clear: right;
+      float: right;
+      font-size: 8pt;
+      color: desaturate($admin-color, 100%);
+      * {
+	 font-size: 8pt;
+      }
+      a {
+	 text-decoration: none;
+	 &:link, &:visited {
+	    color: $admin-color;
+	 }
+	 &:hover, &:active {
+	    color: lighten($admin-color, 10%);
+	 }
+	 span {
+	    padding: 0.1em 0.8em;
+	    color: $font-color;
+	 }
+      }
+   }
+}

@@ -97,28 +97,6 @@
       }
    }
 
-   // Administrative Links
-   .admin {
-      float: right;
-      font-size: 8pt;
-      color: desaturate($admin-color, 100%);
-      * {
-	 font-size: 8pt;
-      }
-      a {
-	 text-decoration: none;
-	 &:link, &:visited {
-	    color: $admin-color;
-	 }
-	 &:hover, &:active {
-	    color: lighten($admin-color, 10%);
-	 }
-	 span {
-	    color: $font-color;
-	 }
-      }
-   }
-
    blockquote {
       font-family: $header-font;
       font-style: italic;

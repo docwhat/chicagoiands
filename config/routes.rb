@@ -1,11 +1,12 @@
 Chicagoiands::Application.routes.draw do
-  resources :meetings
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+  get "/dvds", :to => :dvds, :controller => :meetings, :as => "dvds"
+
   resources :stories
   resources :sessions
   resources :textures
-
-  get "login" => "sessions#new", :as => "login"
-  get "logout" => "sessions#destroy", :as => "logout"
+  resources :meetings
 
   controller :textures do
     #get "about" => "textures#show", :as => about

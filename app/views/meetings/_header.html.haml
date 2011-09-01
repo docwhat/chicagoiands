@@ -1,8 +1,17 @@
+- show_admin = true if local_assigns[:show_admin].nil?
+- show_dvds = true if local_assigns[:show_dvds].nil?
+
 = render :partial => "layouts/date", :locals => { :date => meeting.date }
-%header
-  - if current_user
+
+- if show_dvds and meeting.has_dvd
+  %div(class="has-dvd")
+    = link_to "Buy the DVD", dvds_path, :anchor => "meeting-#{meeting.date}", :title => "Buy the DVD and help support ChicagoIANDS!"
+
+%header(id="meeting-#{meeting.date}")
+  - if show_admin and current_user
     %span{:class => 'admin'}
       = link_to "edit", edit_meeting_path(meeting)
       = link_to "destroy", meeting, confirm: 'Are you sure?', method: :delete
   = link_to((meeting.title ? meeting.title :  'undetermined'), meeting)
-%p= meeting.topic
+
+%p(class="topic")= meeting.topic

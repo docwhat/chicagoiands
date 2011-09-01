@@ -6,6 +6,8 @@ $content-bg: #fff;
 $font-color: #444;
 $admin-color: #b88;
 $link-color: #66a;
+$buy-bg: #f00;
+$buy-color: #fff;
 $pre-font: Menlo, "Bitstream Vera Sans Mono", Monaco, "Lucida Console", monospace;
 
 @import "compass/css3";
@@ -32,6 +34,7 @@ $header-font: "Lora", sans-serif;
 @import "stories";
 @import "welcome";
 @import "sessions";
+@import "admin";
 
 @include global-reset();
 
@@ -43,7 +46,6 @@ body {
 /*
    font-family: verdana, arial, helvetica, sans-serif;
    font-size: 13px;
-   line-height: 1.2em;
 */
 }
 
@@ -77,5 +79,6 @@ body {
 
    p {
       margin: 1em 0;
+      line-height: 1.3em;
    }
 }

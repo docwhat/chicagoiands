@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110810051644) do
+ActiveRecord::Schema.define(:version => 20110827234141) do
 
   create_table "meetings", :force => true do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20110810051644) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "rendered"
+    t.boolean  "has_dvd",    :default => false, :null => false
   end
 
   create_table "stories", :force => true do |t|
