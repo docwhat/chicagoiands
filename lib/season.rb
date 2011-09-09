@@ -4,13 +4,14 @@ require 'date'
 # Seasons begin on August 15th of each year.
 class Season
   FIRST_SEASON = 1999
+  LAST_SEASON = 2100
   attr_reader :year
 
   ##
   # Takes the year the season started.
   def initialize year
     year = year.to_i
-    year = current_season.year if year < FIRST_SEASON
+    year = current_season.year if year < FIRST_SEASON || year > LAST_SEASON
     @year = year
   end
 
