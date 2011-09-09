@@ -44,3 +44,7 @@
 ## Wednesday Aug 31st
 
 * 1 hours
+
+## Thursday Sep 8th
+
+* 3 hours
