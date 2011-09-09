@@ -9,4 +9,8 @@ class Story < ActiveRecord::Base
   def update_rendered
     self.rendered = Kramdown::Document.new(self.body).to_html unless self.body.nil?
   end
+
+  def to_param
+    "#{id}-#{title.downcase.gsub(/[^a-z0-9':-]+/i, '_')}"
+  end
 end
