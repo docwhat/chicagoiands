@@ -10,7 +10,7 @@ gem 'sqlite3', :group => [:test, :development]
 # Asset template engines
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
-  gem 'coffee-script'
+  gem 'coffee-script', "~> 2.2.0"
   gem 'uglifier'
   gem 'compass', :git => 'git://github.com/chriseppstein/compass.git', :branch => 'rails31'
 end
@@ -20,7 +20,7 @@ gem 'kramdown'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'simple-navigation'
-
+gem 'exception_notification'
 
 gem "rspec-rails", :group => [:test, :development]
 gem 'rspec-instafail', :group => [:test, :development]
