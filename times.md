@@ -48,3 +48,7 @@
 ## Thursday Sep 8th
 
 * 3 hours
+
+## Sunday Oct 2nd
+
+* 1 hours
