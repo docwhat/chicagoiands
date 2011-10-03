@@ -1,9 +1,8 @@
 GIT
   remote: git://github.com/chriseppstein/compass.git
-  revision: 22e2458b77519e8eb8463170c1a1fe4bab105f3e
-  branch: rails31
+  revision: 656f12a4abb4e8cfa13e19248ac81a9dcf7ede15
   specs:
-    compass (0.12.0.alpha.0.22e2458)
+    compass (0.12.alpha.0.656f12a)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
