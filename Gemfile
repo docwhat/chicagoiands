@@ -16,6 +16,7 @@ group :assets do
 end
 
 gem 'haml'
+gem 'redcarpet'
 gem 'kramdown'
 gem 'jquery-rails'
 gem 'nokogiri'
