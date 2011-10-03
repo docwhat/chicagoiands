@@ -11,8 +11,6 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'capybara/rspec'
-  require 'kramdown'
-  require 'nokogiri'
   require 'pathname'
   require 'factory_girl_rails'
   require 'json'

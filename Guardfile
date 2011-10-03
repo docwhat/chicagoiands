@@ -18,6 +18,7 @@ guard 'spork', :cucumber => false, :test_unit => false, :rspec_env => { 'RAILS_E
   watch(%r{^config/environments/.+\.rb$})
   watch(%r{^config/initializers/.+\.rb$})
   watch('spec/spec_helper.rb')
+  watch(%r{^lib/.+\.rb$})
 end
 
 guard 'migrate' do
