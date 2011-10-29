@@ -32,7 +32,7 @@ require 'date'
 #  s.force_encoding "UTF-8"
 #end
 
-namespace :zope do
+namespace :import do
 
   desc "Import old-site/stories.xml"
   task :stories => [:environment] do
@@ -158,4 +158,4 @@ namespace :zope do
 
 end
 
-task :zope => [:'zope:schedule', :'zope:stories', :'zope:dvds']
+task :import => [:'import:schedule', :'import:stories', :'import:dvds']
