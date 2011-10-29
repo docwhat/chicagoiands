@@ -23,11 +23,14 @@ gem 'nokogiri'
 gem 'simple-navigation'
 gem 'exception_notification'
 
-gem "rspec-rails", :group => [:test, :development]
-gem 'rspec-instafail', :group => [:test, :development]
-gem 'rb-fsevent', :group => [:test, :development]
-gem 'growl', :group => [:test, :development]
-gem 'pry', :group => [:test, :development]
+group :test, :development do
+  gem "rspec-rails"
+  gem 'rspec-instafail'
+  gem 'rb-fsevent'
+  gem 'growl'
+  gem 'pry'
+end
+
 group :test do
   gem 'database_cleaner'
   gem "factory_girl_rails"
@@ -38,10 +41,10 @@ group :test do
   gem "guard-bundler"
   gem "guard-rspec"
   gem "guard-migrate"
-  #gem 'webkit-rspec-formatter'
-
-#  # To Nuke
-#  gem 'contest'
-#  # Pretty printed test output
-#  gem 'turn', :require => false
 end
+
+group :development do
+  gem 'heroku'
+end
+
+# EOF
