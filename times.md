@@ -52,3 +52,7 @@
 ## Sunday Oct 2nd
 
 * 1 hours
+
+## Saturday Oct 29th
+
+* 1 hours
