@@ -11,8 +11,9 @@ gem 'sqlite3', :group => [:test, :development]
 group :assets do
   gem 'sass-rails', "~> 3.1.0"
   gem 'coffee-script', "~> 2.2.0"
+  # gem 'coffee-rails', "~> 3.1.1"
   gem 'uglifier'
-  gem 'compass', :git => 'git://github.com/chriseppstein/compass.git'
+  gem 'compass', '~> 0.12.alpha'
 end
 
 gem 'haml'
