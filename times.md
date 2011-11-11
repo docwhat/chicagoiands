@@ -56,3 +56,7 @@
 ## Saturday Oct 29th
 
 * 1 hours
+
+## Thursday Nov 10th
+
+* 2 hours
