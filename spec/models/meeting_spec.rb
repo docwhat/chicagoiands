@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Meeting do
-  it_should_update_rendered_on_save :meeting
+  it_should_behave_like_a_rendered_model :meeting
 end

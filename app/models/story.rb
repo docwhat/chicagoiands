@@ -1,3 +1,5 @@
+require 'rendered_model'
+
 class Story < ActiveRecord::Base
   include RenderedModel
 

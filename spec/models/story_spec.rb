@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Story do
-  it_should_update_rendered_on_save :story
+  it_should_behave_like_a_rendered_model :story
 end

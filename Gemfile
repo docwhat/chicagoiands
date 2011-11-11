@@ -16,12 +16,14 @@ group :assets do
 end
 
 gem 'haml'
-gem 'redcarpet'
-gem 'kramdown'
+gem 'redcarpet', '~> 2.0.0b5'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'simple-navigation'
 gem 'exception_notification'
+
+# Only used for importing old site info.
+gem 'kramdown'
 
 group :test, :development do
   gem "rspec-rails"

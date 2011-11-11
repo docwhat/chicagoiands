@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Texture do
-  it_should_update_rendered_on_save :texture
+  it_should_behave_like_a_rendered_model :texture
 end

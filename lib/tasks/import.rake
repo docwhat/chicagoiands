@@ -116,6 +116,7 @@ namespace :import do
 
         raw_html = meeting_xml.xpath("./body").text
         meeting.body = Kramdown::Document.new(raw_html, :input => 'html').to_kramdown
+        meeting.body.gsub! /\\"/, '"'
 
         meeting.date = date
         meeting.save!

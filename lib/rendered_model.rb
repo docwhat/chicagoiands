@@ -17,11 +17,23 @@ module RenderedModel
   #end
 
   module InstanceMethods
+    def markdown
+      @markdown ||= Redcarpet::Markdown.new(
+        Redcarpet::Render::SmartyHTML, {
+          autolink: true,
+          no_intraemphasis: true,
+          lax_html_blocks: true
+      })
+    end
 
     ##
     # Updates the rendered field for the meeting.
     def render_body
-      self.rendered = Redcarpet.new(body, *MARKDOWN_OPTIONS).to_html unless self.body.nil?
+      self.rendered = markdown.render(body) unless body.nil?
+    end
+
+    def rendered
+      read_attribute(:rendered).html_safe
     end
   end
 end
