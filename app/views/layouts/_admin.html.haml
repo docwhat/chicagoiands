@@ -1,0 +1,6 @@
+#login-bar
+  %ul
+    = link_to "&times;".html_safe, logout_path, :class => 'logout'
+    %li= current_user.logon
+    %li= link_to "analytics", "https://www.google.com/analytics/reporting/?id=40327846"
+    %li= link_to "source", "http://github.com/docwhat/chicagoiands"

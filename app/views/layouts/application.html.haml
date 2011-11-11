@@ -12,9 +12,7 @@
   %body{:class => "#{params[:controller]} #{params[:controller]}_#{params[:action]}"}
 
     -if current_user
-      %div{:id => "login-bar"}
-        = current_user.logon
-        = link_to "X", logout_path
+      = render :partial => "layouts/admin"
 
     = render :partial => "layouts/header"
 
@@ -38,3 +36,5 @@
         long as you do not charge for it.
       %p Chicago IANDS is an IL 501(c)(3) not-for-profit corporation.
     = render :partial => "layouts/feedback"
+    -unless current_user
+      = render :partial => "layouts/analytics"
