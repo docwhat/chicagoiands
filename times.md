@@ -60,3 +60,7 @@
 ## Thursday Nov 10th
 
 * 2 hours
+
+## Wednesday Dec 1st
+
+* 1 hours
