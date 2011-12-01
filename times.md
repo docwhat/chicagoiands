@@ -64,3 +64,4 @@
 ## Wednesday Dec 1st
 
 * 1 hours
+* 2 hours
