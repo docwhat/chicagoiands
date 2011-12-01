@@ -3,30 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.stories {
-
-#content article {
-      header {
-	 a {
-	    font-family: $header-font;
-	    display: block;
-	    text-decoration: none;
-	    font-size: 1.4em;
-	    font-weight: bold;
-	    &:link,&:visited {
-	       color: $font-color;
-	    }
-	    &:hover,&:active {
-	       color: lighten($font-color, 10%);
-	    }
-	 }
-	 .author {
-	    float: right;
-	    font-style: italic;
-	    font-size: 0.9em;
-	    clear: both;
-	 }
-	 @include clearfix();
-	 margin-bottom: 1.6em;
+  #content article {
+    header {
+      a {
+        font-family: $header-font;
+        display: block;
+        font-size: 1.2em;
+        font-weight: bold;
       }
-   }
+      .author {
+        float: right;
+        font-style: italic;
+        font-size: 0.9em;
+        clear: both;
+      }
+      @include clearfix();
+      margin-bottom: 1.6em;
+    }
+  }
 }
