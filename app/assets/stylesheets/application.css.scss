@@ -4,11 +4,7 @@ body {
    background-image: inline-image('409_tile_sky.jpg');
    @include background-size(100%);
    color: $font-color;
-   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-/*
-   font-family: verdana, arial, helvetica, sans-serif;
-   font-size: 13px;
-*/
+   font-family: $default-font;
 }
 
 #content {
@@ -42,5 +38,12 @@ body {
    p {
       margin: 1em 0;
       line-height: 1.3em;
+   }
+
+   em {
+     font-style: italic;
+   }
+   strong {
+     font-weight: bold;
    }
 }

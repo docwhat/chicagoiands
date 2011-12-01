@@ -23,12 +23,28 @@
    }
 
    #texture-help {
+     clear: both;
+     font-size: 0.8em;
+     margin-left: auto;
+     margin-right: auto;
+     width: 90%;
+
      blockquote {
-       padding: 1em;
+       font-style: normal;
+       background: #def;
+       padding: 0.4em 1em;
+       border: 1px solid #ddd;
        background: white;
+       font-family: $default-font;
        blockquote {
+         font-style: italic;
          background: #eee;
+         font-family: $header-font;
        }
+     }
+     pre {
+       padding: 0.4em 1em;
+       background: #ddd;
      }
    }
 }
