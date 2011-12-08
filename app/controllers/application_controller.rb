@@ -4,7 +4,18 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :admin?
 
+  before_filter :ensure_domain
+
+  APP_DOMAIN = 'chicagoiands.org'
+
   protected
+
+  def ensure_domain
+    return unless Rails.env.production?
+    if request.env['HTTP_HOST'] != APP_DOMAIN
+      redirect_to "http://#{APP_DOMAIN}#{request.path}", :status => :moved_permanently
+    end
+  end
 
   def current_user
     @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
