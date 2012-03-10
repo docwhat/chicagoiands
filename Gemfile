@@ -9,9 +9,6 @@ gem 'nokogiri'
 gem 'simple-navigation'
 gem 'exception_notification'
 
-# Only used for importing old site info.
-gem 'kramdown'
-
 # Database
 gem 'pg',      :group => [:production]
 gem 'sqlite3', :group => [:test, :development]
