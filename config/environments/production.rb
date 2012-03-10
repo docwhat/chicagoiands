@@ -71,3 +71,5 @@ Chicagoiands::Application.config.middleware.use ExceptionNotifier,
   :email_prefix => "[Chicagoiands] ",
   :sender_address => %{"notifier" <notifier@chicagoiands.org>},
   :exception_recipients => %w{docwhat@gmail.com}
+
+# EOF

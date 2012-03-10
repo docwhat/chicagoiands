@@ -1,7 +1,7 @@
 @import "base";
 
 body {
-   background-image: inline-image('409_tile_sky.jpg');
+   background-image: url('409_tile_sky.jpg');
    @include background-size(100%);
    color: $font-color;
    font-family: $default-font;
