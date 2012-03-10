@@ -11,6 +11,9 @@ end
 
 module Chicagoiands
   class Application < Rails::Application
+    # Disable mass-assignment, use attr_accessible in the model to override.
+    config.active_record.whitelist_attributes = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

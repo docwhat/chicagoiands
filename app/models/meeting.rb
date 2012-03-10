@@ -3,6 +3,8 @@ require 'rendered_model'
 
 class Meeting < ActiveRecord::Base
   include RenderedModel
+  attr_accessible :title, :topic, :body, :date, :has_dvd
+
 
   validates :date,  :presence => true, :uniqueness => true
   validates :title, :presence => true, :length => {:minimum => 2}
