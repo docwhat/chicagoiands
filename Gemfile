@@ -6,6 +6,7 @@ gem 'rails', '~> 3.1.0'
 # Database
 gem 'pg',      :group => [:production]
 gem 'sqlite3', :group => [:test, :development]
+gem 'bcrypt-ruby'
 
 # Asset template engines
 group :assets do
