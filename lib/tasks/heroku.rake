@@ -12,8 +12,4 @@ namespace :heroku do
 
   # TODO db:migrate
 
-  desc "Import the checked in copy of the old-site's data"
-  task :import do
-    system "heroku run rake import"
-  end
 end
