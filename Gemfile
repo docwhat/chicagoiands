@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'nokogiri'
 gem 'simple-navigation'
 gem 'exception_notification'
+gem 'sass-rails', "~> 3.2.0"
 
 # Database
 gem 'pg',      :group => [:production]
@@ -16,7 +17,6 @@ gem 'bcrypt-ruby'
 
 # Asset template engines
 group :assets do
-  gem 'sass-rails', "~> 3.2.0"
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier'
   gem 'compass', "~> 0.11.7"
