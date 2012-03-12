@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'nokogiri'
 gem 'simple-navigation'
 gem 'sass-rails', "~> 3.2.0"
+gem 'thin'
 
 # Database
 gem 'pg',      :group => [:production]
@@ -41,6 +42,7 @@ end
 
 group :development do
   gem 'heroku'
+  gem 'foreman'
   gem 'taps'
 end
 
