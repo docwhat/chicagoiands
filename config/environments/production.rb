@@ -66,10 +66,4 @@ Chicagoiands::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
 
-# We want to be emailed on errors
-Chicagoiands::Application.config.middleware.use ExceptionNotifier,
-  :email_prefix => "[Chicagoiands] ",
-  :sender_address => %{"notifier" <notifier@chicagoiands.org>},
-  :exception_recipients => %w{docwhat@gmail.com}
-
 # EOF

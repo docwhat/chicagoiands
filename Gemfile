@@ -7,7 +7,6 @@ gem 'redcarpet', '~> 2.0.0b5'
 gem 'jquery-rails'
 gem 'nokogiri'
 gem 'simple-navigation'
-gem 'exception_notification', '~> 2.5.2'
 gem 'sass-rails', "~> 3.2.0"
 
 # Database
