@@ -1,7 +1,7 @@
 # -*- ruby -*-
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.0'
+gem 'rails', '~> 3.2.11'
 gem 'haml'
 gem 'redcarpet', '~> 2.0.0b5'
 gem 'jquery-rails'
@@ -23,21 +23,23 @@ group :assets do
 end
 
 group :test, :development do
-  gem "rspec-rails"
+  gem 'rspec-rails'
   gem 'rb-fsevent'
   gem 'growl'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem "factory_girl_rails"
-  gem "capybara"
-  gem "launchy"
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
   gem 'mocha'
+
   gem 'guard-spork'
-  gem "guard-bundler"
-  gem "guard-rspec"
-  gem "guard-migrate"
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'guard-migrate'
+  gem 'rb-fsevent'
 end
 
 group :development do
