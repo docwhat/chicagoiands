@@ -1,7 +1,7 @@
 # -*- ruby -*-
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.2.11'
+gem 'rails', '~> 3.2.12'
 gem 'haml'
 gem 'redcarpet', '~> 2.0.0b5'
 gem 'jquery-rails'
