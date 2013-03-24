@@ -80,9 +80,6 @@ GEM
       guard (>= 0.2.2)
     guard-rspec (0.6.0)
       guard (>= 0.10.0)
-    guard-spork (0.5.2)
-      guard (>= 0.10.0)
-      spork (>= 0.8.4)
     haml (3.1.4)
     heroku (2.21.2)
       launchy (>= 0.3.2)
@@ -168,7 +165,6 @@ GEM
       activesupport (>= 2.3.2)
     sinatra (1.0)
       rack (>= 1.0)
-    spork (0.9.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -215,7 +211,6 @@ DEPENDENCIES
   guard-bundler
   guard-migrate
   guard-rspec
-  guard-spork
   haml
   heroku
   jquery-rails

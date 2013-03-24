@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe "The layout has menu tabs" do
   it "has tabs on the homepage" do
+    FactoryGirl.create(:texture, :label => 'welcome')
     visit root_path
     page.should have_selector("nav li#home.selected")
   end

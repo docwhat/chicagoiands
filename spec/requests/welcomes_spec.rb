@@ -2,6 +2,7 @@ require 'spec_helper'
 require 'date'
 
 describe "Welcome Page" do
+  before { FactoryGirl.create(:texture, :label => 'welcome') }
   describe "Verify next meeting" do
     it "shows the next meeting" do
       future = Date.today + 20

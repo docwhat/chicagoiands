@@ -12,21 +12,11 @@ guard 'bundler' do
   # watch(/^.+\.gemspec/)
 end
 
-guard 'spork', :cucumber => false, :test_unit => false, :rspec_env => { 'RAILS_ENV' => 'test' }, :wait => 30 do
-  watch('config/application.rb')
-  watch('config/environment.rb')
-  watch(%r{^config/environments/.+\.rb$})
-  watch(%r{^config/initializers/.+\.rb$})
-  watch('spec/spec_helper.rb')
-  watch(%r{^lib/.+\.rb$})
-  watch(%r{^Gemfile(|.lock)$})
-end
-
 guard 'migrate' do
   watch(%r{^db/migrate/(\d+).+\.rb})
 end
 
-guard 'rspec', :version => 2, :cli => "--color --format documentation --fail-fast --drb" do
+guard 'rspec', :version => 2, :cli => "--color --format documentation --fail-fast" do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }

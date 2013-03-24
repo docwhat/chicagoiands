@@ -35,7 +35,6 @@ group :test do
   gem 'launchy'
   gem 'mocha'
 
-  gem 'guard-spork'
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-migrate'
