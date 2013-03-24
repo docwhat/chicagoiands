@@ -11,6 +11,18 @@ require 'json'
 require 'jquery-rails'
 require 'database_cleaner'
 
+if ENV['TRAVIS'] == 'true'
+  require 'coveralls'
+  Coveralls.wear!
+else
+  begin
+    require 'simplecov'
+    SimpleCov.start
+  rescue LoadError
+    puts "Not loading simplecov"
+  end
+end
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}

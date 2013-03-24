@@ -34,6 +34,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'mocha'
+  gem "coveralls", ">= 0.6.0"
 
   gem 'guard-bundler'
   gem 'guard-rspec'
