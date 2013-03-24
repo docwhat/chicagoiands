@@ -1,7 +1,5 @@
 language: ruby
-env:
-  - TRAVIS=true
-  - DB=postgres
+env: DB=postgres
 branches:
   only:
     - 'master'
