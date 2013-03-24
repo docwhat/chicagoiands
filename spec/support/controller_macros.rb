@@ -17,7 +17,7 @@ module ControllerMacros
 
   def login_as_admin
     # We don't have a concept of 'admin', just a user...they are automatically an admin.
-    user = Factory.create(:user, :password => "foobar")
+    user = FactoryGirl.create(:user, :password => "foobar")
     session[:user_id] = user.id
   end
 end

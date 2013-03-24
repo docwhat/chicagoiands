@@ -5,7 +5,7 @@ describe StoriesController do
 #  render_views
 
   context "as guest" do
-    let(:story) { Factory.create(:story) }
+    let(:story) { FactoryGirl.create(:story) }
     it "index action should render index template" do
       get :index
       response.should render_template(:index)
@@ -21,7 +21,7 @@ describe StoriesController do
 
   context "as admin" do
 
-    let(:story) { Factory.create(:story) }
+    let(:story) { FactoryGirl.create(:story) }
 
     before(:each) do
       login_as_admin
@@ -39,7 +39,7 @@ describe StoriesController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, :story => Factory.attributes_for(:story)
+      post :create, :story => FactoryGirl.attributes_for(:story)
       assigns[:story].should_not be_new_record
       response.should redirect_to(story_url(assigns[:story]))
     end

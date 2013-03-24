@@ -5,7 +5,7 @@ describe MeetingsController do
 #  render_views
 
   describe "as guest" do
-    let(:meeting) { Factory.create(:meeting) }
+    let(:meeting) { FactoryGirl.create(:meeting) }
     it "index action should render index template" do
       get :index
       response.should render_template(:index)
@@ -26,7 +26,7 @@ describe MeetingsController do
 
   context "as admin" do
 
-    let(:meeting) { Factory.create(:meeting) }
+    let(:meeting) { FactoryGirl.create(:meeting) }
 
     before(:each) do
       login_as_admin
@@ -44,7 +44,7 @@ describe MeetingsController do
     end
 
     it "create action should redirect when model is valid" do
-      post :create, :meeting => Factory.attributes_for(:meeting)
+      post :create, :meeting => FactoryGirl.attributes_for(:meeting)
       assigns[:meeting].should_not be_new_record
       response.should redirect_to(meeting_url(assigns[:meeting]))
     end

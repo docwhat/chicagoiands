@@ -3,7 +3,7 @@ require 'spec_helper'
 describe TexturesController do
 
   context "as guest" do
-    let(:texture) { Factory.create(:texture) }
+    let(:texture) { FactoryGirl.create(:texture) }
     it "index action should render index template" do
       get :index
       response.should render_template(:index)
@@ -19,7 +19,7 @@ describe TexturesController do
 
   context "as admin" do
 
-    let(:texture) { Factory.create(:texture) }
+    let(:texture) { FactoryGirl.create(:texture) }
 
     before(:each) do
       login_as_admin

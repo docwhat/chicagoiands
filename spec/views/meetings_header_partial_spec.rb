@@ -11,20 +11,20 @@ describe "meetings header partial" do
   end
 
   it "renders correctly" do
-    meeting = Factory.create(:meeting)
+    meeting = FactoryGirl.create(:meeting)
     html = partialize :meeting => meeting
     html.css('header').length.should == 1
   end
 
   it "should have the proper id" do
-    meeting = Factory.create(:meeting)
+    meeting = FactoryGirl.create(:meeting)
     html = partialize :meeting => meeting
     html.css("#meeting-#{meeting.date}").length.should == 1
   end
 
   context "a meeting without a dvd" do
     it "should not have the buy-this-dvd element" do
-      meeting = Factory.create(:meeting, :has_dvd => false)
+      meeting = FactoryGirl.create(:meeting, :has_dvd => false)
       html = partialize :meeting => meeting
       html.css('.has-dvd').length.should == 0
     end
@@ -32,7 +32,7 @@ describe "meetings header partial" do
 
   context "a meeting with a dvd" do
     it "should have the buy-this-dvd element" do
-      meeting = Factory.create(:meeting, :has_dvd => true)
+      meeting = FactoryGirl.create(:meeting, :has_dvd => true)
       html = partialize :meeting => meeting
       html.css('.has-dvd').length.should == 1
     end

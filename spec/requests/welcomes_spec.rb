@@ -5,7 +5,7 @@ describe "Welcome Page" do
   describe "Verify next meeting" do
     it "shows the next meeting" do
       future = Date.today + 20
-      meeting = Factory.create(:meeting, :date => future)
+      meeting = FactoryGirl.create(:meeting, :date => future)
       visit root_path
       page.should have_selector("article.next-meeting")
       page.should have_no_selector("article.no-meeting")
