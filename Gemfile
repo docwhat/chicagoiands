@@ -2,7 +2,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.12'
-gem 'haml'
+gem 'haml', '~> 3.1'
 gem 'redcarpet', '~> 2.0'
 gem 'jquery-rails'
 gem 'nokogiri'
