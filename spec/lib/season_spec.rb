@@ -28,7 +28,6 @@ describe Season do
     it "should end next year" do
       season.stop.year.should eq(year + 1)
     end
-
   end
 
   context "given a random year" do
