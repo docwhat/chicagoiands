@@ -3,7 +3,7 @@ require 'nokogiri'
 
 describe "meetings header partial" do
   before :each do
-    view.stubs(:current_user).returns(nil).at_least_once
+    view.stub(:current_user).and_return(nil)
   end
 
   def partialize options={}

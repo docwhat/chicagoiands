@@ -61,7 +61,7 @@ describe MeetingsController do
     end
 
     it "update action should redirect when model is valid" do
-      Meeting.any_instance.stubs(:valid?).returns(true)
+      Meeting.any_instance.stub(:valid?).and_return(true)
       put :update, :id => meeting
       response.should redirect_to(meeting_url(assigns[:meeting]))
     end

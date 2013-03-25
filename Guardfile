@@ -16,7 +16,7 @@ guard 'migrate' do
   watch(%r{^db/migrate/(\d+).+\.rb})
 end
 
-guard 'rspec', :version => 2, :cli => "--color --format documentation --fail-fast" do
+guard 'rspec', :version => 2, :cli => "--color --format progress --order default --fail-fast" do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }

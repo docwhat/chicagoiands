@@ -37,7 +37,7 @@ describe TexturesController do
     end
 
     it "update action should redirect when model is valid" do
-      Texture.any_instance.stubs(:valid?).returns(true)
+      Texture.any_instance.stub(:valid?).and_return(true)
       put :update, :id => texture
       # Should redirect to URL matching label...
       response.should redirect_to(root_path + assigns[:texture].label)

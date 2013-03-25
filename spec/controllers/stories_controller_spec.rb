@@ -56,7 +56,7 @@ describe StoriesController do
     end
 
     it "update action should redirect when model is valid" do
-      Story.any_instance.stubs(:valid?).returns(true)
+      Story.any_instance.stub(:valid?).and_return(true)
       put :update, :id => story
       response.should redirect_to(story_url(assigns[:story]))
     end
