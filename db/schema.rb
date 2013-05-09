@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(:version => 20110827234141) do
     t.text     "topic"
     t.text     "body"
     t.date     "date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.text     "rendered"
     t.boolean  "has_dvd",    :default => false, :null => false
   end
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20110827234141) do
     t.string   "title"
     t.string   "author"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.text     "rendered"
   end
 
@@ -37,15 +37,15 @@ ActiveRecord::Schema.define(:version => 20110827234141) do
     t.string   "label"
     t.text     "body"
     t.text     "rendered"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "logon"
     t.string   "password_digest"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

@@ -11,8 +11,8 @@ gem 'sass-rails', "~> 3.2"
 gem 'thin'
 
 # Database
-gem 'pg',      :group => [:production]
-gem 'sqlite3', :group => [:test, :development]
+gem 'pg', '~> 0.15', :group => [:production]
+gem 'sqlite3',       :group => [:test, :development]
 gem 'bcrypt-ruby'
 
 # Asset template engines
@@ -24,8 +24,6 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'rb-fsevent'
-  gem 'growl'
 end
 
 group :test do
@@ -35,17 +33,18 @@ group :test do
   gem 'launchy'
   gem 'timecop'
   gem 'coveralls', '>= 0.6.0'
-
-  gem 'guard-bundler'
-  gem 'guard-rspec'
-  gem 'guard-migrate'
-  gem 'rb-fsevent'
 end
 
 group :development do
   gem 'heroku'
   gem 'foreman'
   gem 'taps'
+
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'rb-fsevent'
+  gem 'growl'
+  gem 'terminal-notifier-guard'
 end
 
 # EOF

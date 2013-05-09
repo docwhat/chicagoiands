@@ -1,22 +1,10 @@
-# -*- ruby -*-
-# More info at https://github.com/guard/guard#readme
-
-# Ensure we're in test mode.
-ENV["RAILS_ENV"] ||= 'test'
-
-require 'active_support/inflector'
-
 guard 'bundler' do
   watch('Gemfile')
   # Uncomment next line if Gemfile contain `gemspec' command
   # watch(/^.+\.gemspec/)
 end
 
-guard 'migrate' do
-  watch(%r{^db/migrate/(\d+).+\.rb})
-end
-
-guard 'rspec', :cli => "--color --format progress --order default --fail-fast" do
+guard 'rspec', cli: "--color --format progress --order default --fail-fast", focus_on_failed: true do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -38,5 +26,3 @@ guard 'rspec', :cli => "--color --format progress --order default --fail-fast" d
   watch(%r{^spec/factories/.*\.rb$})                  { "spec/factories_spec.rb" }
   watch('spec/factories_spec.rb')                     { "spec/factories" }
 end
-
-# EOF
