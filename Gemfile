@@ -1,10 +1,10 @@
 # -*- ruby -*-
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails', '3.2.13'
 gem 'haml', '~> 3.1'
 gem 'redcarpet', '~> 2.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.2'
 gem 'nokogiri'
 gem 'simple-navigation'
 gem 'sass-rails', "~> 3.2"
