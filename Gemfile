@@ -13,7 +13,7 @@ gem 'thin'
 # Database
 gem 'pg', '~> 0.15', :group => [:production]
 gem 'sqlite3',       :group => [:test, :development]
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Asset template engines
 group :assets do
@@ -29,7 +29,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'capybara'
+  gem 'capybara', '~> 1.1'
   gem 'launchy'
   gem 'timecop'
   gem 'coveralls', '>= 0.6.0'
