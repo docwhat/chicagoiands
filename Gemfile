@@ -42,6 +42,7 @@ group :development do
 
   gem 'guard-bundler'
   gem 'guard-rspec'
+  gem 'spring'
   gem 'rb-fsevent'
   gem 'growl'
   gem 'terminal-notifier-guard'
