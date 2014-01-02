@@ -8,3 +8,4 @@ tmp/
 /.redcar/
 *.tmproj
 /coverage/
+/tags
