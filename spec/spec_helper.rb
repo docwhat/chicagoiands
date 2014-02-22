@@ -5,13 +5,11 @@ ENV['RAILS_ENV'] ||= 'test'
 # This must be first!
 require 'simplecov'
 require 'coveralls'
-require 'codeclimate-test-reporter'
 
 if ENV['SKIP_COVERAGE'].nil?
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
     Coveralls::SimpleCov::Formatter,
-    SimpleCov::Formatter::HTMLFormatter,
-    CodeClimate::TestReporter::Formatter
+    SimpleCov::Formatter::HTMLFormatter
   ]
   SimpleCov.command_name 'RSpec'
   SimpleCov.start 'rails'

@@ -35,7 +35,6 @@ group :test do
   gem 'timecop'
 
   gem 'coveralls', '>= 0.6', require: false
-  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do

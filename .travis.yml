@@ -8,6 +8,3 @@ script: "bundle exec rake db:drop db:create db:migrate spec"
 before_script:
   - "cp config/database.travisci.yml config/database.yml"
   - "psql -c 'create database chicagoiands_test;' -U postgres >/dev/null"
-addons:
-  code_climate:
-    repo_token: 3263ee81ce88f3bf160b5c2545747a612f59301db4c9ef6e12abe4cb4fb92a9a
