@@ -9,7 +9,7 @@ gem 'jquery-rails', '~> 2.2'
 gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
-gem 'thin'
+gem 'unicorn'
 gem 'rails_12factor', group: :production
 
 # Database
