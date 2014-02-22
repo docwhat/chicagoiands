@@ -10,6 +10,7 @@ gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
 gem 'thin'
+gem 'rails_12factor', group: :production
 
 # Database
 gem 'pg', '~> 0.15', group: [:production]
@@ -20,7 +21,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 group :assets do
   gem 'coffee-rails', '~> 3.2'
   gem 'uglifier'
-  gem 'compass', '~> 0.11'
+  gem 'compass-rails'
 end
 
 group :test, :development do
@@ -45,9 +46,7 @@ group :development do
 
   gem 'pry'
 
-  gem 'heroku'
   gem 'foreman'
-  gem 'taps'
 
   gem 'guard-bundler'
   gem 'guard-rspec'
