@@ -2,12 +2,12 @@
 source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
-gem 'rails', '3.2.16'
+gem 'rails', '~> 3.2'
 gem 'haml', '~> 3.1'
 gem 'redcarpet', '~> 2.0'
 gem 'jquery-rails', '~> 2.2'
-gem 'nokogiri'
-gem 'simple-navigation'
+gem 'nokogiri', '~> 1.6'
+gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
 gem 'thin'
 
