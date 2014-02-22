@@ -34,7 +34,7 @@ group :test do
   gem 'launchy'
   gem 'timecop'
 
-  gem 'coveralls', '>= 0.6'
+  gem 'coveralls', '>= 0.6', require: false
 end
 
 group :development do

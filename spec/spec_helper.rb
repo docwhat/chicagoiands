@@ -1,12 +1,16 @@
 # encoding: utf-8
+
 ENV['RAILS_ENV'] ||= 'test'
 
 # This must be first!
 require 'simplecov'
-if !ENV['TRAVIS'].nil?
-  require 'coveralls'
-  Coveralls.wear!
-elsif ENV['SKIP_COVERAGE'].nil?
+require 'coveralls'
+if ENV['SKIP_COVERAGE'].nil?
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+    Coveralls::SimpleCov::Formatter,
+    SimpleCov::Formatter::HTMLFormatter
+  ]
+  SimpleCov.command_name 'RSpec'
   SimpleCov.start 'rails'
 end
 
