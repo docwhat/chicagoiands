@@ -56,6 +56,9 @@ module Chicagoiands
     # parameters by using an attr_accessible or attr_protected declaration.
     # config.active_record.whitelist_attributes = true
 
+    # We don't care about locales
+    config.i18n.enforce_available_locales = false
+
     # Enable the asset pipeline
     config.assets.enabled = true
 

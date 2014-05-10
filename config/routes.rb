@@ -1,7 +1,7 @@
 Chicagoiands::Application.routes.draw do
-  get "login" => "sessions#new", :as => "login"
-  get "logout" => "sessions#destroy", :as => "logout"
-  get "/dvds", :to => :dvds, :controller => :meetings, :as => "dvds"
+  get 'login' => 'sessions#new', :as => 'login'
+  get 'logout' => 'sessions#destroy', :as => 'logout'
+  get '/dvds', to: :dvds, controller: :meetings, as: 'dvds'
 
   resources :stories
   resources :sessions
@@ -9,11 +9,11 @@ Chicagoiands::Application.routes.draw do
   resources :meetings
 
   controller :textures do
-    #get "about" => "textures#show", :as => about
-    get "/:label", :to => :show, :constraints => { :label => /(contact|about|links)/ }
+    # get "about" => "textures#show", :as => about
+    get '/:label', to: :show, constraints: { label: /(contact|about|links)/ }
   end
 
-  root :to => 'welcome#index'
+  root to: 'welcome#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

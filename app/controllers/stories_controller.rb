@@ -2,7 +2,7 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.order("title ASC").all
+    @stories = Story.order('title ASC').all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,7 +47,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to @story, notice: 'Story was successfully created.' }
         format.json { render json: @story, status: :created, location: @story }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +63,7 @@ class StoriesController < ApplicationController
         format.html { redirect_to @story, notice: 'Story was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @story.errors, status: :unprocessable_entity }
       end
     end

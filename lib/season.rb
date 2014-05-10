@@ -1,4 +1,6 @@
+# coding: utf-8
 require 'date'
+
 ##
 # A season
 # Seasons begin on August 15th of each year.
@@ -9,7 +11,7 @@ class Season
 
   ##
   # Takes the year the season started.
-  def initialize year
+  def initialize(year)
     year = year.to_i
     year = current_season.year if year < FIRST_SEASON || year > LAST_SEASON
     @year = year
@@ -17,8 +19,8 @@ class Season
 
   ##
   # The start of a season as a Date.
-  def self.start_of_season year
-    return Date.new year, 8, 15
+  def self.start_of_season(year)
+    Date.new year, 8, 15
   end
 
   ##
@@ -35,18 +37,18 @@ class Season
 
   ##
   # object method version
-  def current_season
+  def current_season # rubocop:disable Delegate
     Season.current_season
   end
 
   ##
   # Returns all known seasons.
   def self.seasons
-    (FIRST_SEASON..(Date.today.year+1)).map {|x| Season.new x}
+    (FIRST_SEASON..(Date.today.year + 1)).map { |x| Season.new x }
   end
 
   def to_s
-    "#{@year}-#{@year+1}"
+    "#{@year}-#{@year + 1}"
   end
 
   ##
@@ -60,5 +62,4 @@ class Season
   def stop
     Season.start_of_season @year + 1
   end
-
 end

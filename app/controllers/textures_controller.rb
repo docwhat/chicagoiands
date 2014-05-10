@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class TexturesController < ApplicationController
   # GET /textures
   # GET /textures.json
@@ -32,7 +34,7 @@ class TexturesController < ApplicationController
 
   # PUT /textures/1
   # PUT /textures/1.json
-  def update
+  def update # rubocop:disable MethodLength
     @texture = Texture.find(params[:id])
 
     respond_to do |format|
@@ -45,7 +47,7 @@ class TexturesController < ApplicationController
         format.html { redirect_to redir_path, notice: 'The text was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @texture.errors, status: :unprocessable_entity }
       end
     end

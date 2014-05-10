@@ -10,20 +10,20 @@ module RenderedModel
 
       before_save :render_body
     end
-    #base_class.extend ClassMethods
+    # base_class.extend ClassMethods
   end
 
-  #module ClassMethods
-  #end
+  # module ClassMethods
+  # end
 
   module InstanceMethods
     def markdown
       @markdown ||= Redcarpet::Markdown.new(
-        Redcarpet::Render::SmartyHTML, {
-          autolink: true,
-          no_intraemphasis: true,
-          lax_html_blocks: true
-      })
+        Redcarpet::Render::SmartyHTML,
+        autolink: true,
+        no_intraemphasis: true,
+        lax_html_blocks: true
+      )
     end
 
     ##

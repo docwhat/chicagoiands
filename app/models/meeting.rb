@@ -5,15 +5,14 @@ class Meeting < ActiveRecord::Base
   include RenderedModel
   attr_accessible :title, :topic, :body, :date, :has_dvd
 
-
-  validates :date,  :presence => true, :uniqueness => true
-  validates :title, :presence => true, :length => {:minimum => 2}
+  validates :date,  presence: true, uniqueness: true
+  validates :title, presence: true, length: { minimum: 2 }
 
   ##
   # The next meeting
   # @return [Meeting]
   def self.next
-    return Meeting.where("meetings.date >= ?", Date.today).order("meetings.date asc").first
+    Meeting.where('meetings.date >= ?', Date.today).order('meetings.date asc').first
   end
 
   ##
@@ -29,11 +28,10 @@ class Meeting < ActiveRecord::Base
   # All seasons start on August 15th of each year.
   # @param season [Season]
   # @return [Meeting]
-  def self.in_season season
-    Meeting.
-      where("meetings.date >= ? AND meetings.date < ?", season.start, season.stop)
-      .order("meetings.date ASC")
+  def self.in_season(season)
+    Meeting
+      .where('meetings.date >= ? AND meetings.date < ?', season.start, season.stop)
+      .order('meetings.date ASC')
       .all
   end
-
 end

@@ -11,11 +11,12 @@ gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
 gem 'unicorn'
 gem 'rails_12factor', group: :production
+gem 'rubocop'
 
 # Database
 gem 'pg', '~> 0.15', group: [:production]
 gem 'sqlite3',       group: [:test, :development]
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.1'
 
 # Asset template engines
 group :assets do
@@ -51,6 +52,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-migrate'
+  gem 'guard-rubocop'
   gem 'guard-shell'
 
   gem 'spring'

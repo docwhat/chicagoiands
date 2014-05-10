@@ -18,7 +18,9 @@ SimpleNavigation::Configuration.run do |navigation|
   # The example below would add a prefix to each key.
   # navigation.id_generator = Proc.new {|key| "my-prefix-#{key}"}
 
-  # If you need to add custom html around item names, you can define a proc that will be called with the name you pass in to the navigation.
+  # If you need to add custom html around item names, you can define a proc
+  # that will be called with the name you pass in to the navigation.
+  #
   # The example below shows how to wrap items spans.
   # navigation.name_generator = Proc.new {|name| "<span>#{name}</span>"}
 
@@ -31,8 +33,10 @@ SimpleNavigation::Configuration.run do |navigation|
     # Add an item to the primary navigation. The following params apply:
     # key - a symbol which uniquely defines your navigation item in the scope of the primary_navigation
     # name - will be displayed in the rendered navigation. This can also be a call to your I18n-framework.
-    # url - the address that the generated item links to. You can also use url_helpers (named routes, restful routes helper, url_for etc.)
-    # options - can be used to specify attributes that will be included in the rendered navigation item (e.g. id, class etc.)
+    # url - the address that the generated item links to. You can also use
+    #       url_helpers (named routes, restful routes helper, url_for etc.)
+    # options - can be used to specify attributes that will be included in the
+    #           rendered navigation item (e.g. id, class etc.)
     #           some special options that can be set:
     #           :if - Specifies a proc to call to determine if the item should
     #                 be rendered (e.g. <tt>:if => Proc.new { current_user.admin? }</tt>). The
@@ -45,19 +49,19 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.
     #
-    #primary.item :key_1, 'name', url, options
+    # primary.item :key_1, 'name', url, options
 
     # Add an item which has a sub navigation (same params, but with block)
-    #primary.item :key_2, 'name', url, options do |sub_nav|
+    # primary.item :key_2, 'name', url, options do |sub_nav|
     #  # Add an item to the sub navigation (same params again)
     #  sub_nav.item :key_2_1, 'name', url, options
-    #end
+    # end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    #primary.item :key_3, 'Admin', url, :class => 'special', :if => Proc.new { current_user.admin? }
-    #primary.item :key_4, 'Account', url, :unless => Proc.new { logged_in? }
+    # primary.item :key_3, 'Admin', url, :class => 'special', :if => Proc.new { current_user.admin? }
+    # primary.item :key_4, 'Account', url, :unless => Proc.new { logged_in? }
 
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
@@ -69,8 +73,8 @@ SimpleNavigation::Configuration.run do |navigation|
 
     primary.item :home, 'Home', root_path
     primary.item :about, 'About', root_path + 'about'
-    primary.item :meetings, 'Meetings', meetings_path, :highlights_on => /^\/meetings/
-    primary.item :stories, 'Stories', stories_path, :highlights_on => /^\/stories/
+    primary.item :meetings, 'Meetings', meetings_path, highlights_on: %r{^\/meetings}
+    primary.item :stories, 'Stories', stories_path, highlights_on: %r{^\/stories}
     primary.item :about, 'Links', root_path + 'links'
     primary.item :about, 'DVDs', dvds_path
     primary.item :about, 'Contact', root_path + 'contact'

@@ -28,8 +28,8 @@ class MeetingsController < ApplicationController
   # GET /meetings/dvds
   # GET /meetings/dvds.json
   def dvds
-    @meetings = Meeting.where("has_dvd = ?", true).order("date ASC").all
-    @texture = Texture.find_by_label "dvds"
+    @meetings = Meeting.where('has_dvd = ?', true).order('date ASC').all
+    @texture = Texture.find_by_label 'dvds'
 
     respond_to do |format|
       format.html # dvds.html.erb
@@ -63,7 +63,7 @@ class MeetingsController < ApplicationController
         format.html { redirect_to @meeting, notice: 'Meeting was successfully created.' }
         format.json { render json: @meeting, status: :created, location: @meeting }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
       end
     end
@@ -79,7 +79,7 @@ class MeetingsController < ApplicationController
         format.html { redirect_to @meeting, notice: 'Meeting was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }
       end
     end

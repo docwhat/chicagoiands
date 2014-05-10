@@ -1,0 +1,28 @@
+AllCops:
+  Exclude:
+    - bin/*
+    - script/*
+    - db/migrate/*.rb
+    - db/schema.rb
+
+Delegate:
+  Enabled: false
+
+LineLength:
+  Max: 120
+
+Documentation:
+  Enabled: false
+
+RegexpLiteral:
+  MaxSlashes: 0
+
+FileName:
+  Exclude:
+    - Guardfile
+    - Gemfile
+    - Gemfile.lock
+
+# This is a rails 4ism
+ActionFilter:
+  Enabled: false

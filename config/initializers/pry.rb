@@ -1,5 +1,9 @@
+# coding: utf-8
+# rubocop:disable Delegate,HandleExceptions
+
 begin
   require 'pry'
+
   module Rails
     class Console
       class IRB
