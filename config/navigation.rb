@@ -79,7 +79,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :about, 'DVDs', dvds_path
     primary.item :about, 'Contact', root_path + 'contact'
 
-#    primary.item :logout, 'Logout', session_path, :method => "destroy", :if => Proc.new { current_user }
+    #    primary.item :logout, 'Logout', session_path, :method => "destroy", :if => Proc.new { current_user }
   end
 
 end

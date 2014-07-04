@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe MeetingsController do
-#  fixtures :all
-#  render_views
+  # fixtures :all
+  # render_views
 
   describe 'as guest' do
     let(:meeting) { FactoryGirl.create(:meeting) }
