@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
 gem 'rails', '~> 3.2'
-gem 'haml', '~> 3.1'
+gem 'haml-rails'
 gem 'redcarpet', '~> 2.0'
 gem 'jquery-rails', '~> 2.2'
 gem 'nokogiri', '~> 1.6'
@@ -14,8 +14,8 @@ gem 'rails_12factor', group: :production
 gem 'rubocop'
 
 # Database
-gem 'pg', '~> 0.15', group: [:production]
-gem 'sqlite3',       group: [:test, :development]
+gem 'pg',          group: [:production]
+gem 'sqlite3',     group: [:test, :development]
 gem 'bcrypt-ruby', '~> 3.0.1'
 
 # Asset template engines
