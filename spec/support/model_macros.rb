@@ -6,7 +6,7 @@ module ModelMacros
   end
 
   module ClassMethods
-    def it_should_behave_like_a_rendered_model(model_name)
+    def it_should_behave_like_a_rendered_model(model_name) # rubocop:disable Metrics/AbcSize
       it "updates 'rendered' when saving 'body'" do
         model = FactoryGirl.create(model_name.to_sym)
         model.body, model.rendered = 'one _two_ three', 'not correct'

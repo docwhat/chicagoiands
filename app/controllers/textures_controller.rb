@@ -34,7 +34,7 @@ class TexturesController < ApplicationController
 
   # PUT /textures/1
   # PUT /textures/1.json
-  def update # rubocop:disable MethodLength
+  def update # rubocop:disable MethodLength, Metrics/AbcSize
     @texture = Texture.find(params[:id])
 
     respond_to do |format|

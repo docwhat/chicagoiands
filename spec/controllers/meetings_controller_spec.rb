@@ -28,7 +28,6 @@ describe MeetingsController do
   end
 
   context 'as admin' do
-
     let(:meeting) { FactoryGirl.create(:meeting) }
 
     before(:each) do

@@ -10,7 +10,7 @@ group :red_green_refactor, halt_on_fail: true do
 
   guard(
     :rspec,
-    cmd: 'bin/rspec',
+    cmd: 'bin/rspec --fail-fast',
     failed_mode: :keep,
     all_after_pass: true,
     all_on_start: true,

@@ -71,7 +71,7 @@ class MeetingsController < ApplicationController
 
   # PUT /meetings/1
   # PUT /meetings/1.json
-  def update
+  def update # rubocop:disable Metrics/AbcSize
     @meeting = Meeting.find(params[:id])
 
     respond_to do |format|

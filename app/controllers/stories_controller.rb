@@ -55,7 +55,7 @@ class StoriesController < ApplicationController
 
   # PUT /stories/1
   # PUT /stories/1.json
-  def update
+  def update # rubocop:disable Metrics/AbcSize
     @story = Story.find(params[:id])
 
     respond_to do |format|

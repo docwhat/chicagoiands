@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe TexturesController do
   describe 'routing' do
-
     it 'routes to #index' do
       get('/textures').should route_to('textures#index')
     end
@@ -30,6 +29,5 @@ describe TexturesController do
     it 'routes to #destroy' do
       delete('/textures/1').should route_to('textures#destroy', id: '1')
     end
-
   end
 end

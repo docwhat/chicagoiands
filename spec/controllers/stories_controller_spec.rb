@@ -21,7 +21,6 @@ describe StoriesController do
   end
 
   context 'as admin' do
-
     let(:story) { FactoryGirl.create(:story) }
 
     before(:each) do

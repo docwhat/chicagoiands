@@ -16,7 +16,7 @@ describe 'Welcome Page' do
     end
 
     it 'shows no meeting if there is none' do
-      Meeting.all.each { |x| x.destroy }
+      Meeting.all.each(&:destroy)
       visit root_path
       page.should have_selector('article.no-meetings')
     end
