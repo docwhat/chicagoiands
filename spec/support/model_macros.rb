@@ -11,12 +11,12 @@ module ModelMacros
         model = FactoryGirl.create(model_name.to_sym)
         model.body, model.rendered = 'one _two_ three', 'not correct'
         model.save!
-        model.rendered.should == "<p>one <em>two</em> three</p>\n"
+        expect(model.rendered).to eq("<p>one <em>two</em> three</p>\n")
       end
 
       it "has an html_safe 'rendered'" do
         model = FactoryGirl.create(model_name.to_sym)
-        model.rendered.should be_html_safe
+        expect(model.rendered).to be_html_safe
       end
     end
   end

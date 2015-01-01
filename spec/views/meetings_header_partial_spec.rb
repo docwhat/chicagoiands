@@ -3,7 +3,7 @@ require 'nokogiri'
 
 describe 'meetings header partial' do
   before :each do
-    view.stub(:current_user).and_return(nil)
+    allow(view).to receive(:current_user).and_return(nil)
   end
 
   def partialize(options = {})
@@ -13,20 +13,20 @@ describe 'meetings header partial' do
   it 'renders correctly' do
     meeting = FactoryGirl.create(:meeting)
     html = partialize meeting: meeting
-    html.css('header').length.should == 1
+    expect(html.css('header').length).to eq(1)
   end
 
   it 'should have the proper id' do
     meeting = FactoryGirl.create(:meeting)
     html = partialize meeting: meeting
-    html.css("#meeting-#{meeting.date}").length.should == 1
+    expect(html.css("#meeting-#{meeting.date}").length).to eq(1)
   end
 
   context 'a meeting without a dvd' do
     it 'should not have the buy-this-dvd element' do
       meeting = FactoryGirl.create(:meeting, has_dvd: false)
       html = partialize meeting: meeting
-      html.css('.has-dvd').length.should == 0
+      expect(html.css('.has-dvd').length).to eq(0)
     end
   end
 
@@ -34,7 +34,7 @@ describe 'meetings header partial' do
     it 'should have the buy-this-dvd element' do
       meeting = FactoryGirl.create(:meeting, has_dvd: true)
       html = partialize meeting: meeting
-      html.css('.has-dvd').length.should == 1
+      expect(html.css('.has-dvd').length).to eq(1)
     end
   end
 end

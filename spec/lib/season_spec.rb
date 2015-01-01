@@ -8,11 +8,11 @@ describe Season do
     let(:season) { Season.current_season }
 
     it 'should start last year' do
-      season.start.year.should eq(year - 1)
+      expect(season.start.year).to eq(year - 1)
     end
 
     it 'should stop this year' do
-      season.stop.year.should eq(year)
+      expect(season.stop.year).to eq(year)
     end
   end
 
@@ -22,11 +22,11 @@ describe Season do
     let(:season) { Season.current_season }
 
     it 'should start this year' do
-      season.start.year.should eq(year)
+      expect(season.start.year).to eq(year)
     end
 
     it 'should end next year' do
-      season.stop.year.should eq(year + 1)
+      expect(season.stop.year).to eq(year + 1)
     end
   end
 
@@ -35,23 +35,23 @@ describe Season do
     let(:year) { 1990 + rand(20) }
 
     it 'should have a stop year one more than the start year' do
-      season.stop.year.should eq(season.start.year + 1)
+      expect(season.stop.year).to eq(season.start.year + 1)
     end
 
     it 'should start in August' do
-      season.start.month.should eq(8)
+      expect(season.start.month).to eq(8)
     end
 
     it 'should start on the 15th' do
-      season.start.day.should eq(15)
+      expect(season.start.day).to eq(15)
     end
 
     it 'should stop in August' do
-      season.stop.month.should eq(8)
+      expect(season.stop.month).to eq(8)
     end
 
     it 'should stop on the 15th' do
-      season.stop.day.should eq(15)
+      expect(season.stop.day).to eq(15)
     end
   end
 
@@ -60,12 +60,12 @@ describe Season do
   it 'should return current year with a too early year' do
     Timecop.freeze Date.new(2012, 12, 14)
     season = Season.new 1972
-    season.start.year.should == 2012
+    expect(season.start.year).to eq(2012)
   end
 
   it 'should return the current year with a too late year' do
     Timecop.freeze Date.new(2012, 12, 14)
     season = Season.new 2112
-    season.start.year.should == 2012
+    expect(season.start.year).to eq(2012)
   end
 end

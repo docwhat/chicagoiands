@@ -41,7 +41,7 @@ describe StoriesController do
 
     it 'create action should redirect when model is valid' do
       post :create, story: FactoryGirl.attributes_for(:story)
-      assigns[:story].should_not be_new_record
+      expect(assigns[:story]).not_to be_new_record
 
       expect(response).to redirect_to(story_url(assigns[:story]))
     end
@@ -60,7 +60,7 @@ describe StoriesController do
     end
 
     it 'update action should redirect when model is valid' do
-      Story.any_instance.stub(:valid?).and_return(true)
+      allow_any_instance_of(Story).to receive(:valid?).and_return(true)
       put :update, id: story
 
       expect(response).to redirect_to(story_url(assigns[:story]))

@@ -49,7 +49,7 @@ describe MeetingsController do
 
     it 'create action should redirect when model is valid' do
       post :create, meeting: FactoryGirl.attributes_for(:meeting)
-      assigns[:meeting].should_not be_new_record
+      expect(assigns[:meeting]).not_to be_new_record
 
       expect(response).to redirect_to(meeting_url(assigns[:meeting]))
     end
@@ -68,7 +68,7 @@ describe MeetingsController do
     end
 
     it 'update action should redirect when model is valid' do
-      Meeting.any_instance.stub(:valid?).and_return(true)
+      allow_any_instance_of(Meeting).to receive(:valid?).and_return(true)
       put :update, id: meeting
 
       expect(response).to redirect_to(meeting_url(assigns[:meeting]))

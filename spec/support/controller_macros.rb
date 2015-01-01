@@ -8,8 +8,8 @@ module ControllerMacros
       actions.each do |action|
         it "should require admin with #{action} action " do
           get action, id: 1
-          response.should redirect_to(login_url)
-          flash[:notice].should == 'Please login first'
+          expect(response).to redirect_to(login_url)
+          expect(flash[:notice]).to eq('Please login first')
         end
       end
     end
