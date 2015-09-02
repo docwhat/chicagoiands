@@ -12,7 +12,7 @@ class Meeting < ActiveRecord::Base
   # The next meeting
   # @return [Meeting]
   def self.next
-    Meeting.where('meetings.date >= ?', Date.today).order('meetings.date asc').first
+    Meeting.where('meetings.date >= ?', Time.zone.today).order('meetings.date asc').first
   end
 
   ##

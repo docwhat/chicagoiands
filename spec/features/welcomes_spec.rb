@@ -8,7 +8,7 @@ describe 'Welcome Page' do
 
   describe 'Verify next meeting' do
     it 'shows the next meeting' do
-      future = Date.today + 20
+      future = Time.zone.today + 20
       FactoryGirl.create(:meeting, date: future)
       visit root_path
       expect(page).to have_selector('article.next-meeting')

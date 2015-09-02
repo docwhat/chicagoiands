@@ -26,7 +26,7 @@ class Season
   ##
   # The current season
   def self.current_season
-    today = Date.today
+    today = Time.zone.today
     season_cutoff = Season.start_of_season today.year
     if today >= season_cutoff
       Season.new(today.year)
@@ -44,7 +44,7 @@ class Season
   ##
   # Returns all known seasons.
   def self.seasons
-    (FIRST_SEASON..(Date.today.year + 1)).map { |x| Season.new x }
+    (FIRST_SEASON..(Time.zone.today.year + 1)).map { |x| Season.new x }
   end
 
   def to_s
