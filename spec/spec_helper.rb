@@ -1,18 +1,21 @@
 # encoding: utf-8
 
-ENV['RAILS_ENV'] ||= 'test'
-
 # This must be first!
 require 'simplecov'
 require 'coveralls'
 
-if ENV['SKIP_COVERAGE'].nil?
+if ENV['RAILS_ENV'] == 'test'
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
     Coveralls::SimpleCov::Formatter,
     SimpleCov::Formatter::HTMLFormatter
   ]
   SimpleCov.command_name 'RSpec'
-  SimpleCov.start 'rails'
+  SimpleCov.start('rails') do
+    # add_group 'Models', 'app/models'
+    # add_group 'Controllers', 'app/controllers'
+    # add_group 'Helpers', 'app/helpers'
+    add_filter '.bundle'
+  end
 end
 
 require File.expand_path('../../config/environment', __FILE__)
