@@ -1,9 +1,9 @@
 language: ruby
 env: DB=postgres
-branches:
-  only:
-    - 'master'
+sudo: false
+cache: bundler
 script: "bundle exec rake db:drop db:create db:migrate test"
+bundler_args: "--without 'development production'"
 before_script:
   - "cp config/database.travisci.yml config/database.yml"
   - "psql -c 'create database chicagoiands_test;' -U postgres >/dev/null"
