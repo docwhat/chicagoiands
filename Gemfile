@@ -1,21 +1,23 @@
 # encoding: utf-8
 source 'https://rubygems.org'
-ruby File.read('.ruby-version').strip
 
 gem 'rails', '~> 3.2'
 gem 'haml-rails'
+gem 'haml', '~> 4.0'
 gem 'redcarpet', '~> 2.0'
 gem 'jquery-rails', '~> 2.2'
 gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
-gem 'unicorn'
-gem 'rails_12factor', group: :production
 gem 'rubocop'
+gem 'pg', group: [:production, :test]
+
+group :production do
+  gem 'rails_12factor'
+  gem 'unicorn'
+end
 
 # Database
-gem 'pg',          group: [:production]
-gem 'sqlite3',     group: [:test, :development]
 gem 'bcrypt-ruby', '~> 3.0.1'
 
 # Asset template engines
@@ -28,6 +30,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'rspec', '~> 2.14'
+  gem 'test-unit'
 end
 
 group :test do
@@ -41,6 +44,7 @@ group :test do
 end
 
 group :development do
+  gem 'sqlite3'
   gem 'letter_opener'
 
   gem 'better_errors'

@@ -22,9 +22,6 @@ LineLength:
 Documentation:
   Enabled: false
 
-RegexpLiteral:
-  MaxSlashes: 0
-
 FileName:
   Exclude:
     - Guardfile
