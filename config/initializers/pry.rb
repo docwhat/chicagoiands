@@ -1,5 +1,5 @@
 # coding: utf-8
-# rubocop:disable Delegate,HandleExceptions
+# rubocop:disable Lint/HandleExceptions
 
 begin
   require 'pry'

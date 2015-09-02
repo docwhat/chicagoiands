@@ -13,9 +13,6 @@ AllCops:
 Rails/ActionFilter:
   Enabled: false
 
-Delegate:
-  Enabled: false
-
 LineLength:
   Max: 120
 
@@ -27,3 +24,5 @@ FileName:
     - Guardfile
     - Gemfile
     - Gemfile.lock
+
+inherit_from: .rubocop_todo.yml

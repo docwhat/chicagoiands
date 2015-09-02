@@ -37,7 +37,7 @@ class Season
 
   ##
   # object method version
-  def current_season # rubocop:disable Delegate
+  def current_season
     Season.current_season
   end
 
