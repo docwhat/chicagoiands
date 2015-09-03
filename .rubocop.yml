@@ -4,10 +4,11 @@ AllCops:
     - '**/Rakefile'
     - '**/Guardfile'
   Exclude:
-    - bin/*
-    - script/*
-    - db/migrate/*.rb
-    - db/schema.rb
+    - 'bin/**'
+    - 'script/**'
+    - 'db/migrate/*.rb'
+    - 'db/schema.rb'
+    - 'vendor/**'
 
 # Remove when upgrading to Rails 4.x
 Rails/ActionFilter:
@@ -21,8 +22,8 @@ Documentation:
 
 FileName:
   Exclude:
-    - Guardfile
-    - Gemfile
-    - Gemfile.lock
+    - 'Guardfile'
+    - 'Gemfile'
+    - 'Gemfile.lock'
 
-inherit_from: .rubocop_todo.yml
+inherit_from: '.rubocop_todo.yml'

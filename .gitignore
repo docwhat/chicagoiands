@@ -10,3 +10,4 @@ tmp/
 *.tmproj
 /coverage/
 /tags
+/vendor/
