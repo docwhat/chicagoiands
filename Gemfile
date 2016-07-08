@@ -5,7 +5,7 @@ ruby File.read('.ruby-version').strip
 gem 'rails', '~> 3.2'
 gem 'haml-rails'
 gem 'haml', '~> 4.0'
-gem 'redcarpet', '~> 2.0'
+gem 'redcarpet', '~> 2.3'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'nokogiri', '~> 1.6'
