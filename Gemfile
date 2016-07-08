@@ -5,13 +5,13 @@ ruby File.read('.ruby-version').strip
 gem 'rails', '~> 3.2'
 gem 'haml-rails'
 gem 'haml', '~> 4.0'
-gem 'redcarpet', '~> 2.3'
+gem 'redcarpet', '~> 3.3'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
-gem 'rubocop'
+gem 'rubocop', '~> 0.35.1'
 gem 'pg', group: [:production, :test]
 
 group :production do
