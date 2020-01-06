@@ -11,7 +11,7 @@ gem 'jquery-ui-rails'
 gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
 gem 'sass-rails', '~> 3.2'
-gem 'rubocop', '~> 0.35.1'
+gem 'rubocop', '~> 0.79.0'
 gem 'pg', group: [:production, :test]
 
 group :production do
