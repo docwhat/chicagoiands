@@ -24,7 +24,7 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 
 # Asset template engines
 group :assets do
-  gem 'coffee-rails', '~> 3.2'
+  gem 'coffee-rails', '~> 5.0'
   gem 'uglifier'
   gem 'compass-rails'
 end
