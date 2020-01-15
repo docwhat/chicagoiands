@@ -31,7 +31,7 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'rspec', '~> 2.14'
+  gem 'rspec', '~> 3.0'
   gem 'test-unit'
 end
 
