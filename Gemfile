@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
-gem 'sass-rails', '~> 3.2'
+gem 'sass-rails', '~> 6.0'
 gem 'rubocop', '~> 0.35.1'
 gem 'pg', group: [:production, :test]
 
