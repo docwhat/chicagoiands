@@ -2,7 +2,7 @@
 source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
-gem 'rails', '~> 3.2'
+gem 'rails', '~> 6.0'
 gem 'haml-rails'
 gem 'haml', '~> 4.0'
 gem 'redcarpet', '~> 3.3'
