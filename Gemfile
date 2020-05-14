@@ -2,15 +2,15 @@
 source 'https://rubygems.org'
 ruby File.read('.ruby-version').strip
 
-gem 'rails', '~> 3.2'
-gem 'haml-rails'
+gem 'rails', '~> 5.0', '>= 5.0.0'
+gem 'haml-rails', '>= 0.5.3'
 gem 'haml', '~> 4.0'
 gem 'redcarpet', '~> 3.3'
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+gem 'jquery-rails', '>= 4.0.1'
+gem 'jquery-ui-rails', '>= 5.0.5'
 gem 'nokogiri', '~> 1.6'
 gem 'simple-navigation', '~> 3.11'
-gem 'sass-rails', '~> 3.2'
+gem 'sass-rails', '~> 5.0', '>= 5.0.5'
 gem 'rubocop', '~> 0.35.1'
 gem 'pg', group: [:production, :test]
 
@@ -24,21 +24,21 @@ gem 'bcrypt-ruby', '~> 3.0.1'
 
 # Asset template engines
 group :assets do
-  gem 'coffee-rails', '~> 3.2'
+  gem 'coffee-rails', '~> 4.1', '>= 4.1.1'
   gem 'uglifier'
-  gem 'compass-rails'
+  gem 'compass-rails', '>= 3.0.2'
 end
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 2.99.0'
   gem 'rspec', '~> 2.14'
   gem 'test-unit'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'capybara'
+  gem 'factory_girl_rails', '>= 4.7.0'
+  gem 'capybara', '>= 2.7.1'
   gem 'launchy'
   gem 'timecop'
 
@@ -49,7 +49,7 @@ group :development do
   gem 'sqlite3'
   gem 'letter_opener'
 
-  gem 'better_errors'
+  gem 'better_errors', '>= 2.1.1'
   gem 'binding_of_caller'
 
   gem 'pry'
